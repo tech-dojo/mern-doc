@@ -3,29 +3,29 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Bare - Start Bootstrap Template</title>
+  <title>Bare - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/doc.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <style>
+  <!-- Custom CSS -->
+  <style>
     body {
-        padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+      padding-top: 70px;
+      /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
-    </style>
+  </style>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -34,216 +34,222 @@
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div  class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand"  href="./index.html">Tech Dojo React Framework</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav pull-right">
-                    <li >
-                        <a href="./doc.html">DOC</a>
-                    </li>
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./index.html">Tech Dojo React Framework</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav pull-right">
+          <li>
+            <a href="./doc.html">DOC</a>
+          </li>
 
-                </ul>
+        </ul>
 
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container-fluid">
-      <div  class="row" >
-          <div class="col-lg-2 col-md-2 col-sm-2 ">
-            <div class="">
-            <ul class="nav nav-pills nav-stacked menuCss">
-                <li >
-                    <a href="#overview">Overview</a>
-                </li>
-                <li>
-                    <a href="#gettingStarted">Getting Started</a>
-                </li>
-                <li>
-                    <a href="#overview">Folder Structure</a>
-                </li>
-                <li>
-                    <a href="#overview">Configuration</a>
-                </li>
-
-
-            </ul>
-          </div>
-          </div>
-            <div id="overview" class="col-lg-10 col-md-10 col-sm-10" style="border-left: 1px solid red; padding-left: 10px ">
-
-               <div id="gettingStarted">
-                 <h1>Overview</h1>
-                    <p>We designed React Framework to be as natural as possible for a web developer to build great web application.</p>
-                    <p>We focus on using the standard HTML, CSS, and Javascript, just like you’d use to build a website.</p>
-                    <p>We hope you find that React Framework not only makes web application development easier and faster,
-                       but we hope it makes it more fun.</p>
-               </div>
-               <div >
-                 <h1>Getting Started</h1>
-                 <br></br>
-                 <h2>Prerequisites</h2>
-
-                  <p>Before you begin, you should make sure you have installed all these prerequisites on your development machine.</p>
-
-                  <h4><b>Node.js & npm Install</b></h4>
-
-                        <div>
-                              <ul>
-                              <li>    $ sudo apt-get install curl </li>
-                              <li>$ curl -sL https://deb.nodesource.com/setup | sudo bash - </li>
-                              <li>$ sudo apt-get install -y nodejs </li>
-                              <li>$ sudo apt-get install -y build-essential (Recommended for Linux) </li>
-                              <li>$ npm install -g gulp </li>
-                              <li>$ npm install --save gulp gulp-live-server </li>
-
-                              </ul>
-
-
-                          </div>
-
-                          <h4><b>MongoDB Install</b></h4>
-
-                                <div>
-                                      <ul>
-                                      <li>$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</li>
-                                      <li>$ echo "deb http://repo.mongodb.org/apt/ubuntu</li>
-                                      <li>$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</li>
-                                      <li>$ sudo apt-get update</li>
-                                      <li>$ sudo apt-get install -y mongodb-org</li>
-                                      </ul>
-                                  </div>
-                          <h4><b>Git Install/Clone</b></h4>
-
-                                <div>
-                                      <ul>
-                                      <li>$ sudo apt-get update</li>
-                                      <li>$ sudo apt-get install git</li>
-                                      <li>$ sudo git clone https://github.com/<i>(Clone ReactFramework)</i></li>
-                                      </ul>
-                                  </div>
-
-                      <h4><b>After cloning the project from github to run the app</b></h4>
-
-
-
-                      <div>
-                            <ul>
-                          <p>Make sure <b>mongodb</b> is running, to run <b>mongodb</b></p>
-                            <li>$ mongod</li>
-                            <br></br>
-                            <p>Install global dependencies with </b></p>
-
-                            <li>$ npm install -g gulp bower react-tools browserify</li>
-                            <br></br>
-                            <p>Install dependencies with </p>
-                            <li>$ npm install</li>
-                            <br></br>
-                            <p>Run app with </p>
-                            <li>$ gulp serve</li>
-                            </ul>
-                        </div>
-
-
-                 </div>
-
-
-
-
-               <div>
-                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-               <div>
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-
-               <div>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-
-               <div>
-                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-               </div>
-               <div>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </div>
-
-                <div>
-                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                 </div>
-                 <div>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  </div>
-                  <div>
-                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                   </div>
-                   <div>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </div>
-                    <div>
-                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                     </div>
-                     <div>
-                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                      </div>
-                      <div>
-                           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                       </div>
-                       <div>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </div>
-                        <div>
-                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                         </div>
-                         <div>
-                              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                          </div>
-                          <div>
-                               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                           </div>  <div>
-                                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                              </div>  <div>
-                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                 </div>
-
-                           <div>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </div>v
-
-                            <div>
-                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                             </div>
-
-
-            </div>
-
-        </div>
-        <!-- /.row -->
-
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
+  </nav>
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+  <!-- Page Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 ">
+        <div class="">
+          <ul class="nav nav-pills nav-stacked menuCss">
+            <li>
+              <a href="#overview">Overview</a>
+            </li>
+            <li>
+              <a href="#gettingStarted">Getting Started</a>
+            </li>
+            <li>
+              <a href="#overview">Folder Structure</a>
+            </li>
+            <li>
+              <a href="#architectureDataFlow">Architecture & Data Flow</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1 "></div>
+      <div id="overview" class="col-lg-9 col-md-9 col-sm-9" style="border-left: 1px solid red">
+        <div id="gettingStarted">
+          <h1>Overview</h1>
+          <p>We designed React Framework to be as natural as possible for a web developer to build great web application.</p>
+          <p>We focus on using the standard HTML, CSS, and Javascript, just like you’d use to build a website.</p>
+          <p>We hope you find that React Framework not only makes web application development easier and faster, but we hope it makes it more fun.</p>
+        </div>
+        <div>
+          <h1>Getting Started</h1>
+            <p>We designed React Framework to be as natural as possible for a web developer to build great web application.</p>
+            <p>We focus on using the standard HTML, CSS, and Javascript, just like you’d use to build a website.</p>
+            <p>We hope you find that React Framework not only makes web application development easier and faster, but we hope it makes it more fun.</p>
+          <h2>Prerequisites</h2>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+          <p>Before you begin, you should make sure you have installed all these prerequisites on your development machine.</p>
 
+          <h4><b>Node.js & npm Install</b></h4>
+
+          <div>
+            <ul>
+              <li> $ sudo apt-get install curl </li>
+              <li>$ curl -sL https://deb.nodesource.com/setup | sudo bash - </li>
+              <li>$ sudo apt-get install -y nodejs </li>
+              <li>$ sudo apt-get install -y build-essential (Recommended for Linux) </li>
+              <li>$ npm install -g gulp </li>
+              <li>$ npm install --save gulp gulp-live-server </li>
+            </ul>
+          </div>
+
+          <h4><b>MongoDB Install</b></h4>
+          <div>
+            <ul>
+              <li>$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</li>
+              <li>$ echo "deb http://repo.mongodb.org/apt/ubuntu</li>
+              <li>$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</li>
+              <li>$ sudo apt-get update</li>
+              <li>$ sudo apt-get install -y mongodb-org</li>
+            </ul>
+          </div>
+          <h4><b>Git Install/Clone</b></h4>
+
+          <div>
+            <ul>
+              <li>$ sudo apt-get update</li>
+              <li>$ sudo apt-get install git</li>
+              <li>$ sudo git clone https://github.com/<i>(Clone ReactFramework)</i></li>
+            </ul>
+          </div>
+
+          <h4><b>After cloning the project from github to run the app</b></h4>
+
+          <div>
+            <ul>
+              <p>Make sure <b>mongodb</b> is running, to run <b>mongodb</b></p>
+              <li>$ mongod</li>
+              <br></br>
+              <p>Install global dependencies with </b>
+              </p>
+
+              <li>$ npm install -g gulp bower react-tools browserify</li>
+              <br></br>
+              <p>Install dependencies with </p>
+              <li>$ npm install</li>
+              <br></br>
+              <p>Run app with </p>
+              <li>$ gulp serve</li>
+            </ul>
+          </div>
+        </div>
+        <br></br>
+        <div id="architectureDataFlow">
+          <h1>Architecture & Data Flow</h1>
+          <p>The application architecture used on the client-side for data flow between the React components and the
+            backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
+            - <b>stores</b> and <b>views.</b>
+          </p>
+          <h2>Flow of Data</h2>
+          <p>Let’s start with the Article list view component from the framework. In order to get the list of articles
+            from the backend and load in the view, first <span class="codeInsidePgrph">ArticleStore.fetchArticleList()</span> function is called when the
+            component is initialized.
+          </p>
+
+          <p class="codeExmp">class ArticleList extends React.Component {
+              constructor(props, context){
+                  ...
+                  ArticleStore.fetchArticleList();
+                  ...
+                }
+              ...
+            }
+
+            <u>FIG:</u> Article List Component
+          </p>
+          <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
+            the database using the appropriate <b>API</b> call.
+          </p>
+        </br>
+          <li>
+            <b>
+            So when this article list data returns successfully, how is this data rendered in the article list view?
+            </b>
+          </li>
+
+          <p class="codeExmp">_onChange() {
+              this.setState(getArticleList());
+              }
+
+              <u>FIG:</u> onChange function in view
+          </p>
+
+          <p>
+            The <span class="codeInsidePgrph">_onChange(){...}</span> function in the view is registered in the store
+            as a callback function to be called when the data is available.
+          </p>
+
+          <p class="codeExmp">componentWillMount() {
+    ArticleStore.onChange(this._onChange);
+  }
+
+<u>FIG:</u> onChange function being registered
+
+</p>
+<p class="codeExmp"> function onChange(listener) {
+    changeListeners.push(listener);
+  }
+
+<u>FIG:</u> onChange function in store
+</p>
+<p>
+Listeners being pushed to a changeListener array which is used below, The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
+when the data is successfully fetched so the registered changeListeners are run.
+</p>
+<p class="codeExmp">
+ function triggerListeners() {
+    changeListeners.forEach(function(listener) {
+      listener();
+    })
+  };
+
+<u>FIG:</u> Running each registered listener function
+</p>
+<p class="codeExmp">
+function fetchArticleList() {
+    get("/api/articles").then((data) => {
+      articleList = data;
+      triggerListeners();
+    });
+  }
+
+<u>FIG:</u> fetchArticleList() calls the triggerListeners() when data is retrieved
+</p>
+</br>
+<h2>Data Flow Model</h2>
+<img src="images/image00.png"/>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- jQuery Version 1.11.1 -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>
