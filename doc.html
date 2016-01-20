@@ -75,7 +75,7 @@
               <a href="#gettingStarted">Getting Started</a>
             </li>
             <li>
-              <a href="#overview">Folder Structure</a>
+              <a href="#createArticleComponent">Component</a>
             </li>
             <li>
               <a href="#architectureDataFlow">Architecture & Data Flow</a>
@@ -166,7 +166,16 @@
             component is initialized.
           </p>
 
-          <p class="codeExmp">class ArticleList extends React.Component {
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
               constructor(props, context){
                   ...
                   ArticleStore.fetchArticleList();
@@ -175,8 +184,9 @@
               ...
             }
 
-            <u>FIG:</u> Article List Component
-          </p>
+            <b>FIG</b><span style="color: #333333">:</span> Article List Component
+</pre></td></tr></table></div>
+
           <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
             the database using the appropriate <b>API</b> call.
           </p>
@@ -187,62 +197,502 @@
             </b>
           </li>
 
-          <p class="codeExmp">_onChange() {
-              this.setState(getArticleList());
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">       _onChange() {
+              <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
               }
 
-              <u>FIG:</u> onChange function in view
-          </p>
+              <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
+</pre></td></tr></table></div>
 
           <p>
             The <span class="codeInsidePgrph">_onChange(){...}</span> function in the view is registered in the store
             as a callback function to be called when the data is available.
           </p>
 
-          <p class="codeExmp">componentWillMount() {
-    ArticleStore.onChange(this._onChange);
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">componentWillMount() {
+    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
   }
 
-<u>FIG:</u> onChange function being registered
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
+</pre></td></tr></table></div>
+</br>
 
-</p>
-<p class="codeExmp"> function onChange(listener) {
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> onChange(listener) {
     changeListeners.push(listener);
   }
 
-<u>FIG:</u> onChange function in store
-</p>
-<p>
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> store
+</pre></td></tr></table></div>
+
 Listeners being pushed to a changeListener array which is used below, The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
 when the data is successfully fetched so the registered changeListeners are run.
 </p>
-<p class="codeExmp">
- function triggerListeners() {
-    changeListeners.forEach(function(listener) {
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> triggerListeners() {
+    changeListeners.forEach(<span style="color: #008800; font-weight: bold">function</span>(listener) {
       listener();
     })
   };
 
-<u>FIG:</u> Running each registered listener function
-</p>
-<p class="codeExmp">
-function fetchArticleList() {
-    get("/api/articles").then((data) => {
-      articleList = data;
+<b>FIG</b><span style="color: #333333">:</span> Running each registered listener <span style="color: #008800; font-weight: bold">function</span>
+</pre></td></tr></table></div>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
+    get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
+      articleList <span style="color: #333333">=</span> data;
       triggerListeners();
     });
   }
 
-<u>FIG:</u> fetchArticleList() calls the triggerListeners() when data is retrieved
-</p>
+<b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
+</pre></td></tr></table></div>
 </br>
 <h2>Data Flow Model</h2>
-<img src="images/image00.png"/>
+<img style="max-width: 100%;" src="images/image00.png"/>
+        </div>
+        <div id="createArticleComponent">
+          <h4>1. Create Article Component</h4>
+          <p>
+            This is example of a simple but realistic <b>CreateArticle.jsx</b> component. Let’s straight get into the code,
+          </p>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>
+
+<span style="color: #008800; font-weight: bold">class</span> CreateArticle <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props) {
+    <span style="color: #008800; font-weight: bold">super</span>(props);
+    <span style="color: #008800; font-weight: bold">this</span>.history <span style="color: #333333">=</span> props.history;
+    <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
+
+    <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle.bind(<span style="color: #008800; font-weight: bold">this</span>);
+    <span style="color: #008800; font-weight: bold">this</span>.handleInputContent <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputContent.bind(<span style="color: #008800; font-weight: bold">this</span>);
+    <span style="color: #008800; font-weight: bold">this</span>._formSubmit <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>._formSubmit.bind(<span style="color: #008800; font-weight: bold">this</span>);
+  }
+  handleInputTitle(e) {
+    <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle.title <span style="color: #333333">=</span> e.target.value;
+    <span style="color: #008800; font-weight: bold">this</span>.setState({CreateArticle<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle});
+  }
+  handleInputContent(e) {
+    <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle.content <span style="color: #333333">=</span> e.target.value;
+    <span style="color: #008800; font-weight: bold">this</span>.setState({CreateArticle<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle});
+  }
+   _formSubmit(e) {
+    e.preventDefault();
+    ArticleStore.addArticle(<span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle, <span style="color: #008800; font-weight: bold">this</span>.history);
+}
+
+
+  render() {
+
+    <span style="color: #008800; font-weight: bold">return</span> (
+      <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
+        <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
+            <span style="color: #333333">&lt;</span>h2<span style="color: #333333">&gt;</span>
+              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Create Article<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/b&gt;</span>
+            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h2&gt;</span>
+            <span style="color: #333333">&lt;</span>form onSubmit<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>._formSubmit}<span style="color: #333333">&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;textarea&quot;</span> label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
+            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/form&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+    )
+  }
+}
+
+<span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> CreateArticle;
+</pre></td></tr></table></div>
+
+
+          <p>
+            This component is responsible to add a new Article in the database. The <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>
+            and the <span class="codeInsidePgrph">handleInputContent(e) {...}</span> takes the input from the user for the Article Title and Article Content.
+            Finally the <span class="codeInsidePgrph">_formSubmit(e) {...}</span> submit the newly created article.
+          </p>
+          <h4>2. Edit Article Component</h4>
+          <p>
+            In this part <b>EditArticle.jsx</b> component will be discussed. Let’s start with the code,
+          </p>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>
+
+<span style="color: #008800; font-weight: bold">function</span> getArticle() {
+    <span style="color: #008800; font-weight: bold">return</span> {EditArticle<span style="color: #333333">:</span> ArticleStore.getArticle()}
+}
+
+<span style="color: #008800; font-weight: bold">class</span> EditArticle <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props) {
+    <span style="color: #008800; font-weight: bold">super</span>(props);
+      <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.history <span style="color: #333333">=</span> props.history;
+    ArticleStore.fetchArticle(props.params.id);
+
+    <span style="color: #008800; font-weight: bold">this</span>.state<span style="color: #333333">=</span>getArticle();
+    <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle.bind(<span style="color: #008800; font-weight: bold">this</span>);
+    <span style="color: #008800; font-weight: bold">this</span>.handleInputContent <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputContent.bind(<span style="color: #008800; font-weight: bold">this</span>);
+      <span style="color: #008800; font-weight: bold">this</span>._onChange <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>._onChange.bind( <span style="color: #008800; font-weight: bold">this</span> );
+    <span style="color: #008800; font-weight: bold">this</span>._formSubmit <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>._formSubmit.bind(<span style="color: #008800; font-weight: bold">this</span>);
+  }
+  handleInputTitle(e) {
+    <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle.title <span style="color: #333333">=</span> e.target.value;
+    <span style="color: #008800; font-weight: bold">this</span>.setState({EditArticle<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle});
+  }
+
+  handleInputContent(e) {
+    <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle.content <span style="color: #333333">=</span> e.target.value;
+    <span style="color: #008800; font-weight: bold">this</span>.setState({EditArticle<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle});
+  }
+  _formSubmit(e) {
+    e.preventDefault();
+    ArticleStore.editArticle(<span style="color: #008800; font-weight: bold">this</span>.state.EditArticle, <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle._id,<span style="color: #008800; font-weight: bold">this</span>.history);
+  }
+  componentWillMount() {
+      ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+
+  componentWillUnmount() {
+     ArticleStore.removeChangeListener( <span style="color: #008800; font-weight: bold">this</span>._onChange );
+  }
+  _onChange() {
+      <span style="color: #008800; font-weight: bold">this</span>.setState( getArticle() );
+  }
+
+  render() {
+<span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.state.EditArticle;
+
+    <span style="color: #008800; font-weight: bold">return</span> (
+      <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
+        <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
+            <span style="color: #333333">&lt;</span>h2<span style="color: #333333">&gt;</span>
+              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Edit Article<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/b&gt;</span>
+            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h2&gt;</span>
+            <span style="color: #333333">&lt;</span>form onSubmit<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>._formSubmit}<span style="color: #333333">&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> value<span style="color: #333333">=</span>{article.title} label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;textarea&quot;</span> value<span style="color: #333333">=</span>{article.content} label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
+            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/form&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+    )
+  }
+}
+
+<span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> EditArticle;
+</pre></td></tr></table></div>
+<p>This component is responsible for updating an Article in the database.
+<span class="codeInsidePgrph">ArticleStore.fetchArticle(props.params.id);</span> fetch the desired article by articleID
+from the list which is needed to updated.
+</p>
+<p>
+  Inside <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>, <span class="codeInsidePgrph">this.state.EditArticle.title = e.target.value;</span>
+  takes the input from the user to update the Article Title and
+  <span class="codeInsidePgrph">this.setState({EditArticle: this.state.EditArticle});</span>.
+  updates the object every time after changes is being made.
+</p>
+<p>
+  The <span class="codeInsidePgrph">handleInputContent(e) {...}</span> does exactly same thing as the
+  <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>. Finally,
+  the <span class="codeInsidePgrph">_formSubmit(e) {...}</span> submit the updated article.
+</p>
+<h4>3. View Article Component</h4>
+<p>
+  The <b>ViewArticle.jsx</b> component is almost similar with the <b>EditArticle.jsx</b> component,
+  so only the distinguish methods will be discussed in this part,
+</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> { Link } from <span style="background-color: #fff0f0">&#39;react-router&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span style="background-color: #fff0f0">&#39;react-router-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> auth from <span style="background-color: #fff0f0">&#39;./../../services/Authentication&#39;</span>;
+
+<span style="color: #008800; font-weight: bold">function</span> getArticle() {
+    <span style="color: #008800; font-weight: bold">return</span> {article<span style="color: #333333">:</span> ArticleStore.getArticle()}
+}
+
+<span style="color: #008800; font-weight: bold">class</span> ViewArticle <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props, context){
+    <span style="color: #008800; font-weight: bold">super</span>(props, context);
+    ArticleStore.fetchArticle(props.params.id);
+    ArticleStore.fetchArticleList();
+    <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.article <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">=</span> auth.loggedIn();
+    <span style="color: #008800; font-weight: bold">this</span>.state.articleID <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.props.params.id;
+    <span style="color: #008800; font-weight: bold">this</span>._onChange <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>._onChange.bind( <span style="color: #008800; font-weight: bold">this</span> );
+    <span style="color: #008800; font-weight: bold">this</span>.deleteArticle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.deleteArticle.bind(<span style="color: #008800; font-weight: bold">this</span>);
+  }
+
+  componentWillMount() {
+    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+ componentWillUnmount() {
+    ArticleStore.removeChangeListener(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+  _onChange() {
+    <span style="color: #008800; font-weight: bold">this</span>.setState( getArticle());
+  }
+
+  deleteArticle() {
+     ArticleStore.deleteArticle(<span style="color: #008800; font-weight: bold">this</span>.state.articleID, <span style="color: #008800; font-weight: bold">this</span>.props.history);
+  }
+
+  render(){
+          <span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.state.article;
+          console.log (<span style="background-color: #fff0f0">&#39;Get Article ViewArticle&#39;</span> <span style="color: #333333">+</span> getArticle());
+
+  		<span style="color: #008800; font-weight: bold">return</span> (
+        <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
+        <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>h1<span style="color: #333333">&gt;</span>{article.title}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h1&gt;</span>
+          <span style="color: #333333">&lt;</span>hr<span style="color: #333333">&gt;&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/hr&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+          <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>}<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>h3<span style="color: #333333">&gt;</span>{article.content}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h3&gt;</span>
+        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+        <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>}<span style="color: #333333">&gt;</span>
+          {<span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">&lt;</span>div className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;pull-right&quot;</span><span style="color: #333333">&gt;</span>
+            <span style="color: #333333">&lt;</span>LinkContainer className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;editBtnCSS&quot;</span> to<span style="color: #333333">=</span>{<span style="color: #FF0000; background-color: #FFAAAA">`</span><span style="color: #333333">/</span>articles<span style="color: #333333">/</span>edit<span style="color: #333333">/</span>${article._id}<span style="color: #FF0000; background-color: #FFAAAA">`</span>}<span style="color: #333333">&gt;&lt;</span>Button  bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">&gt;</span>Edit<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;&lt;/LinkContainer&gt;</span>
+            <span style="color: #333333">&lt;</span>Button onClick<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.deleteArticle} bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;danger&quot;</span><span style="color: #333333">&gt;</span>Delete<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/div&gt;</span>
+          }
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+         <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+      )
+    }
+}
+
+<span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> ViewArticle;
+</pre></td></tr></table></div>
+
+<p>It allows the user to view an article ,delete an article,and provides the link for the edit article.
+  Delete and edit Works only, when the user is logged in.
+</p>
         </div>
       </div>
     </div>
     <!-- /.row -->
-
   </div>
   <!-- /.container -->
 
