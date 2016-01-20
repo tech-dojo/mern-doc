@@ -162,6 +162,95 @@
 
                  </div>
 
+                 <div>
+                   <h1>Folder Structure </h1>
+                   <br></br>
+                    <h2>.tmp</h2>
+                    <p>This folder stores the raw javascript code in app.js for the browser to read easily.
+                       Using browserify all the jsx files are compiled to app.js.</p>
+
+                       <h2>App</h2>
+                       <p>This is where all the front-end files are stored</p>
+
+                       <h4><b>Components</b></h4>
+                       <p>The components folder is where you store React JS application components,
+                          to learn more about it visit the React JS components section.</p>
+
+                          <h4><b>Images</b></h4>
+                          <p>This is where the images that we will use are stored.</p>
+
+                             <h4><b>Services</b></h4>
+                             <p>All the services are stored here and if needed imported from here.</p>
+                              <p> Services allow us to keep data across the lifetime of the app and also helps us
+                                communicate that data in a consistent way.</p>
+
+                                <h4><b>Stores</b></h4>
+                                <p>The apps’ stores are all stored in this folder.</p>
+                                  <p>Exchange of data from the front-end to the backend or vice versa happens here.</p>
+                                <p>  Once the data is here, any component can use it.</p>
+
+                                <h4><b>Index.ejs</b></h4>
+                                <p>This is the main entry point of the app</p>
+
+                                <h4><b>Main.jsx</b></h4>
+                                <p>All the components gets rendered into the root file from here</p>
+
+                                <h4><b>Style.css</b></h4>
+                                <p>All the css code are written here.</p>
+
+
+                                <h2>Server</h2>
+
+                                <p>The server folder contains all the server files you use in your application,
+                                   this is where you store your MVC server files.</p>
+
+
+                               <h4><b>controllers</b></h4>
+                                 <p>The controllers folder is where you store your Express application controllers,
+                                    this is where you write your backend business logic.</p>
+
+
+                              <h4><b>models</b></h4>
+                                <p>The models folder is where you store your Mongoose models,
+                                  this is where you define your backend models.</p>
+
+                             <h4><b>routes</b></h4>
+                               <p>The routes folder contains the Server routing configuration files, this is where you define your Express routes.</p>
+
+                             <h4><b>strategies</b></h4>
+                               <p>The strategies folder contains the strategies configuration files loaded by the passport.js file.</p>
+
+                             <h4><b>express.js</b></h4>
+                               <p>Express configuration file, it initializes & configures the Express application.</p>
+
+                             <h4><b>passport.js</b></h4>
+                               <p>Passport configuration file that initializes & configures the Passport's authentication strategies and middlewares from the strategies folder.</p>
+
+                             <h4><b>seeds.js</b></h4>
+                               <p>Seeds contain the initial data that we wanna load our website with if any.</p>
+
+                           <h4><b>server.js</b></h4>
+                             <p>Our main application file, where you initialize your Node.js application.</p>
+
+
+                            <h2>Application Files</h2>
+
+                            <h4><b>gulpfile.js</b></h4>
+                              <p>Gulp definition file is where you define your grant tasks, for more information visit the Gulp section.</p>
+
+                            <h4><b>package.json</b></h4>
+                              <p>npm definition file, where you configure the backend modules you want to use, for more information visit the NPM section.</p>
+
+                       <h2>Hidden Configuration Files</h2>
+
+                       <h4><b>.gitignore</b></h4>
+                         <p>Git ignore file, you use it to tell git what ignore in next commits.</p>
+                          <p>After installation the application generates a lot of code that you don't want to include in your repository, 
+                            so this is where you tell git to ignore those files.</p>
+
+
+                 </div>
+
 
 
 
