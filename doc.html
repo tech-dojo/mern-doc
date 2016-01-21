@@ -75,6 +75,9 @@
               <a href="#gettingStarted">Getting Started</a>
             </li>
             <li>
+              <a href="#folderStructure">Folder Structure</a>
+            </li>
+            <li>
               <a href="#component">Component</a>
             </li>
             <li>
@@ -145,30 +148,131 @@
               <li>$ mongod</li>
             </ul>
               <p class="l-sub-section">Install global dependencies with,</p>
-            <ul class="shellCommands">
+            <ul class="shellCommands" >
               <li>$ npm install -g gulp bower react-tools browserify</li>
             </ul>
               <p class="l-sub-section">Install dependencies with,</p>
-            <ul class="shellCommands">
+            <ul class="shellCommands" id="folderStructure">
               <li>$ npm install</li>
             </ul>
               <p class="l-sub-section">Run app with,</p>
             <ul class="shellCommands">
               <li>$ gulp serve</li>
             </ul>
-          </div>
+          </div >
         </div>
 <div>
 <h1>Folder Structure</h1>
 
+<h2>.tmp</h2>
+
+<p>This folder stores the raw javascript code in <span class="codeInsidePgrph">app.js</span> for the browser to read easily.
+   Using browserify all the jsx files are compiled to <span class="codeInsidePgrph">app.js</span>.</p>
+
+<h2>App</h2>
+
+<p>This is where all the front-end files are stored.</p>
+
+<h4>Components</h4>
+
+<p>The components folder is where you store React JS application components,</p>
+   <p> to learn more about it visit the React JS components section.</p>
+
+   <h4>Images</h4>
+
+   <p>This is where the images that we will use are stored</p>
 
 
+      <h4>Services</h4>
+
+      <p>All the services are stored here and if needed imported from here.</p>
+         <p> Services allow us to keep data across the lifetime of the app
+           and also helps us communicate that data in a consistent way.</p>
+
+
+         <h4>Stores</h4>
+
+         <p>The apps’ stores are all stored in this folder.</p>
+        <p> Exchange of data from the front-end to the backend or vice versa happens here. Once the data is here, any component can use it.</p>
+
+        <span class="fileName-title ">Index.ejs</span>
+
+        <p>This is the root file of the app.</p>
+
+        <span class="fileName-title ">Main.jsx</span>
+
+        <p>All the components gets rendered into the root file from here.</p>
+
+        <span class="fileName-title ">Style.css</span>
+
+        <p>All the css code are written here.</p>
+
+
+        <h2>Server</h2>
+
+        <p>The server folder contains all the server files you use in your application, this is where you store your MVC server files.</p>
+
+       <h4>Controllers</h4>
+
+       <p>The controllers folder is where you store your Express application controllers, this is where you write your backend business logic.</p>
+
+       <h4>Models</h4>
+
+       <p>The models folder is where you store your Mongoose models, this is where you define your backend models.</p>
+
+       <h4>Routes</h4>
+
+       <p>The routes folder contains the <b>Server routing</b> configuration files, this is where you define your Express routes.</p>
+
+       <h4>Strategies</h4>
+
+       <p>The <b>strategies</b> folder contains the strategies configuration files loaded by the <b>passport.js</b> file.</p>
+
+       <span class="fileName-title ">Express.js</span>
+
+       <p>Express configuration file, it initializes & configures the Express application.</p>
+
+       <span class="fileName-title ">Passport.js</span>
+
+       <p>Passport configuration file that initializes & configures the Passport's authentication strategies and middlewares from the <b>strategies</b> folder.</p>
+
+       <span class="fileName-title ">Seeds.js</span>
+
+       <p>Seeds contain the initial data that we wanna load our website with if any.</p>
+
+       <span class="fileName-title ">Server.js</span>
+
+       <p>Our main application file, where you initialize your Node.js application.</p>
+
+
+       <h2>Application Files</h2>
+
+ <p>There are a few application files stored in root folder.</p>
+
+<span class="fileName-title ">gulpfile.js</span>
+
+<p>Gulp definition file is where you define your grant tasks, for more information visit the Gulp section.</p>
+
+
+<span class="fileName-title ">package.json</span>
+
+<p>npm definition file, where you configure the backend modules you want to use,
+   for more information visit the NPM section.</p>
+
+
+       <h2 id="component">Hidden Configuration Files</h2>
+
+<span class="fileName-title ">.gitignore</span>
+
+       <p>Git ignore file, you use it to tell git what ignore in next commits. </p>
+        <p> After installation the application generates a lot of code that you don't want to include in your repository,</p>
+         <p> so this is where you tell git to ignore those files.</p>
 
 </div>
 
 
 
-        <div id="component">
+        <div >
           <h1>Component</h1>
           <h4>1. Create Article Component</h4>
           <p>
@@ -941,7 +1045,7 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 <span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 2&quot;</span>
 }
 
-<span style="color: #0000DD; font-weight: bold">2</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+<span  id="signUp" style="color: #0000DD; font-weight: bold">2</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
 {
 <span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b81&quot;</span>
 <span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
@@ -955,7 +1059,7 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 
 
            <!-- /*********************** new component backend end **********************/ -->
-      <div id="signUp">
+      <div>
            <h1>Sign Up Component</h1>
            <p>
              The <b>Signup.jsx</b> component is all about signing up an user to the the application. This will shows how to signup a user with validation in the front-end.
@@ -1683,7 +1787,8 @@ module.exports <span style="color: #333333">=</span> _.extend(
 <p class="l-sub-section">In the controllers folder, inside the user folder are files that are mentioned above. Using the functions in
   <span class="codeInsidePgrph">users.authentication.server.controller</span> we signin, signout and signup.</p>
 <div class="example-title">users.authentication.server.controller</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
+ 1
  2
  3
  4
@@ -1837,7 +1942,7 @@ exports.signin <span style="color: #333333">=</span> <span style="color: #008800
 	})(req, res, next);
 };
 
-<span style="color: #888888">/**</span>
+<span id="architectureDataFlow" style="color: #888888">/**</span>
 <span style="color: #888888"> * Signout</span>
 <span style="color: #888888"> */</span>
 exports.signout <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
@@ -1853,127 +1958,125 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 </pre></td></tr></table></div>
 </div>
                 <!-- /*********************** new signup backend end **********************/ -->
-                <div id="architectureDataFlow">
-                  <h1>Architecture & Data Flow</h1>
-                  <p>The application architecture used on the client-side for data flow between the React components and the
-                    backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
-                    - <b>stores</b> and <b>views.</b>
-                  </p>
-                  <h2>Flow of Data</h2>
-                  <p>Let’s start with the Article list view component from the framework. In order to get the list of articles
-                    from the backend and load in the view, first <span class="codeInsidePgrph">ArticleStore.fetchArticleList()</span> function is called when the
-                    component is initialized.
-                  </p>
-                  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
-         2
-         3
-         4
-         5
-         6
-         7
-         8
-         9
-        10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
-          constructor(props, context){
-            ...
-            ArticleStore.fetchArticleList();
-            ...
-              }
-            ...
-          }
 
-        <b>FIG</b><span style="color: #333333">:</span> Article List Component
-        </pre></td></tr></table></div>
+<div>
+          <h1>Architecture & Data Flow</h1>
+          <p>The application architecture used on the client-side for data flow between the React components and the
+            backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
+            - <b>stores</b> and <b>views.</b>
+          </p>
+          <h2>Flow of Data</h2>
+          <p>Let’s start with the Article list view component from the framework. In order to get the list of articles
+            from the backend and load in the view, first <span class="codeInsidePgrph">ArticleStore.fetchArticleList()</span> function is called when the
+            component is initialized.
+          </p>
 
-                  <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
-                    the database using the appropriate <b>API</b> call.
-                  </p>
-                </br>
-                  <li>
-                    <b>
-                    So when this article list data returns successfully, how is this data rendered in the article list view?
-                    </b>
-                  </li>
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props, context){
+    ...
+    ArticleStore.fetchArticleList();
+    ...
+      }
+    ...
+  }
 
-                  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-        2
-        3
-        4
-        5</pre></td><td><pre style="margin: 0; line-height: 125%">
-        _onChange() {
-          <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
-          }
+<b>FIG</b><span style="color: #333333">:</span> Article List Component
+</pre></td></tr></table></div>
 
-        <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
-        </pre></td></tr></table></div>
-
-                  <p>
-                    The <span class="codeInsidePgrph">_onChange(){...}</span> function in the view is registered in the store
-                    as a callback function to be called when the data is available.
-                  </p>
-
-                  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-        2
-        3
-        4
-        5</pre></td><td><pre style="margin: 0; line-height: 125%">componentWillMount() {
-            ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
-          }
-
-        <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
-        </pre></td></tr></table></div>
+          <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
+            the database using the appropriate <b>API</b> call.
+          </p>
         </br>
+          <li>
+            <b>
+            So when this article list data returns successfully, how is this data rendered in the article list view?
+            </b>
+          </li>
 
-        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-        2
-        3
-        4
-        5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> onChange(listener) {
-            changeListeners.push(listener);
-          }
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">
+_onChange() {
+  <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
+  }
 
-        <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> store
-        </pre></td></tr></table></div>
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
+</pre></td></tr></table></div>
 
-        Listeners being pushed to a changeListener array which is used below, The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
-        when the data is successfully fetched so the registered changeListeners are run.
-        </p>
-        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-        2
-        3
-        4
-        5
-        6
-        7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> triggerListeners() {
-            changeListeners.forEach(<span style="color: #008800; font-weight: bold">function</span>(listener) {
-              listener();
-            })
-          };
+          <p>
+            The <span class="codeInsidePgrph">_onChange(){...}</span> function in the view is registered in the store
+            as a callback function to be called when the data is available.
+          </p>
 
-        <b>FIG</b><span style="color: #333333">:</span> Running each registered listener <span style="color: #008800; font-weight: bold">function</span>
-        </pre></td></tr></table></div>
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">componentWillMount() {
+    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
 
-        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-        2
-        3
-        4
-        5
-        6
-        7
-        8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
-            get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
-              articleList <span style="color: #333333">=</span> data;
-              triggerListeners();
-            });
-          }
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
+</pre></td></tr></table></div>
+</br>
 
-        <b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
-        </pre></td></tr></table></div>
-        </br>
-        <h2>Data Flow Model</h2>
-        <img style="max-width: 100%;" src="images/image00.png"/>
-                </div>
-      </div>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> onChange(listener) {
+    changeListeners.push(listener);
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> store
+</pre></td></tr></table></div>
+
+Listeners being pushed to a changeListener array which is used below, The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
+when the data is successfully fetched so the registered changeListeners are run.
+</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> triggerListeners() {
+    changeListeners.forEach(<span style="color: #008800; font-weight: bold">function</span>(listener) {
+      listener();
+    })
+  };
+
+<b>FIG</b><span style="color: #333333">:</span> Running each registered listener <span style="color: #008800; font-weight: bold">function</span>
+</pre></td></tr></table></div>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
+    get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
+      articleList <span style="color: #333333">=</span> data;
+      triggerListeners();
+    });
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
+</pre></td></tr></table></div>
+</div>
       <!-- /*********************** Col 9 Div Ends) **********************/ -->
     </div>
     <!-- /.row -->
