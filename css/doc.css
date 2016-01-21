@@ -3,6 +3,21 @@
   position: fixed;
   margin-left: 50px;
 }
+
+.example-title {
+    color: #fff;
+    padding: 0 16px;
+    font-size: 18px;
+    border-color: #1976D2;
+    /*background: #1976D2;*/
+    background: #205081;
+    /* box-shadow: none; */
+    /* margin-bottom: -18px; */
+    /* z-index: 1; */
+    position: relative;
+    /* border-bottom-right-radius: 0; */
+    /* border-bottom-left-radius: 0; */
+}
 .shellCommands{
   white-space: pre-line;
   font-family: Consolas, monaco, monospace;
@@ -10,14 +25,38 @@
   background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 3px;
-    padding: 0 3em 0 3em;
+    padding: 0 3em;
     max-width: 50%;
+}
+
+.l-sub-section {
+    /* margin: 0 0 32px 0; */
+     padding: 0 3em;
+    background: #f5f6f7;
+    border-left: 4px solid #8BC34A;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
 .codeInsidePgrph{
   font-family: Consolas, monaco, monospace;
   font-weight: bolder;
-  background-color: #f5f5f5;
+  background-color: #C5C5C5;
     border: 1px solid #ccc;
     border-radius: 3px;
+}
+
+.fileName-title {
+    color: #fff;
+    padding: 0 16px;
+    font-size: 18px;
+    border-color: #1976D2;
+    background: #1976D2;
+    /*background: #205081;*/
+    /* box-shadow: none; */
+    /* margin-bottom: -18px; */
+    /* z-index: 1; */
+    position: relative;
+    /* border-bottom-right-radius: 0; */
+    /* border-bottom-left-radius: 0; */
 }
