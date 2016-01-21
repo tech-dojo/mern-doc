@@ -401,16 +401,793 @@ you can retrieve the article with the id <i>569cbefe877baaf001e43b7f</i>.
 you can create an article.
 </p>
 
-<p>Using http “delete” method and the following url '/articles/api/articles/569cbefe877baaf001e43b7f
-you can delete the article with the id 569cbefe877baaf001e43b7f.
+<p>Using http “delete” method and the following url <i>'/articles/api/articles/569cbefe877baaf001e43b7f</i>
+you can delete the article with the id <i>569cbefe877baaf001e43b7f</i>.
 </p>
 
 
+<p>app.param gets a single article from the database if the url param contains an id.</p>
+
+
+<p>3) Make a server.controller.js file in the controllers folder where the CRUD operation functions are defined. </p>
+<p> The file from the models folder needs to be imported to this file in order to save, update and delete data.</p>
+<p> This file provides all the functions that the server.routes.js uses such as list, create, etc.</p>
+
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>);
+<span style="color: #008800; font-weight: bold">var</span> Article <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../models/Article.js&#39;</span>);
+<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>);
+
+module.exports.list <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+  Article.find(<span style="color: #008800; font-weight: bold">function</span>(error, data) {
+    <span style="color: #008800; font-weight: bold">if</span> (error) {} <span style="color: #008800; font-weight: bold">else</span> {
+      res.send(data);
+    }
+  });
+};
+
+module.exports.create <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+  <span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Article(req.body);
+  article.user <span style="color: #333333">=</span> req.user;
+  article.save(<span style="color: #008800; font-weight: bold">function</span>(err, data) {
+    <span style="color: #008800; font-weight: bold">if</span> (err) {
+      res.status(<span style="color: #0000DD; font-weight: bold">501</span>).send();
+    } <span style="color: #008800; font-weight: bold">else</span> {
+      res.status(<span style="color: #0000DD; font-weight: bold">200</span>).send(data);
+    }
+  });
+};
+
+module.exports.read <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+  res.json(req.article);
+};
+
+
+exports.<span style="color: #008800; font-weight: bold">delete</span> <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+	<span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> req.article;
+	article.remove(<span style="color: #008800; font-weight: bold">function</span>(err) {
+		<span style="color: #008800; font-weight: bold">if</span> (err) {
+			<span style="color: #008800; font-weight: bold">return</span> res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send();
+		} <span style="color: #008800; font-weight: bold">else</span> {
+			res.json(article);
+		}
+	});
+};
+
+
+module.exports.update <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+  <span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> req.article;
+
+  	article <span style="color: #333333">=</span> _.extend(article, req.body);
+
+  	article.save(<span style="color: #008800; font-weight: bold">function</span>(err) {
+  		<span style="color: #008800; font-weight: bold">if</span> (err) {
+  			<span style="color: #008800; font-weight: bold">return</span> res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send();
+  		} <span style="color: #008800; font-weight: bold">else</span> {
+  			res.json(article);
+  		}
+  	});
+};
+
+exports.articleByID <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res, next, id) {
+	Article.findById(id).populate(<span style="background-color: #fff0f0">&#39;user&#39;</span>, <span style="background-color: #fff0f0">&#39;email&#39;</span>).exec(<span style="color: #008800; font-weight: bold">function</span>(err, article) {
+		<span style="color: #008800; font-weight: bold">if</span> (err) <span style="color: #008800; font-weight: bold">return</span> next(err);
+		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>article) <span style="color: #008800; font-weight: bold">return</span> next(<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Error</span>(<span style="background-color: #fff0f0">&#39;Failed to load article &#39;</span> <span style="color: #333333">+</span> id));
+		req.article <span style="color: #333333">=</span> article;
+		next();
+	});
+};
+</pre></td></tr></table></div>
+
+
+<p>list() gives the user the list of articles.</p>
+
+<p>create() lets the user create an article by calling the save method on the model.</p>
+
+<p>edit() lets the user edit an article by calling the save method on the model after changing the original data into the the edited one which came from req.body.</p>
+
+<p>delete() lets the user delete an article by calling the remove method on the model.</p>
+
+<p>articleByID() finds a single article based on id for edit() or delete() to use.</p>
+
+
+<p>An example of the json format of the data that returned when <i>http://localhost:9001/api/articles</i> is called is given below:</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+{
+<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7f&quot;</span>
+<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.834Z&quot;</span>
+<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 1&quot;</span>
+<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 1&quot;</span>
+}
+<span style="color: #FF0000; background-color: #FFAAAA">-</span>
+<span style="color: #0000DD; font-weight: bold">1</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+{
+<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b80&quot;</span>
+<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.836Z&quot;</span>
+<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 2&quot;</span>
+<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 2&quot;</span>
+}
+<span style="color: #FF0000; background-color: #FFAAAA">-</span>
+<span style="color: #0000DD; font-weight: bold">2</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+{
+<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b81&quot;</span>
+<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.836Z&quot;</span>
+<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 3&quot;</span>
+<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 3&quot;</span>
+}
+</pre></td></tr></table></div>
 
            </div>
 
 
            <!-- /*********************** new component backend end **********************/ -->
+
+
+                  <!-- /*********************** new signup backend **********************/ -->
+<div>
+
+<p>1) Create a .js file needs to be made in the models folder which is inside the server folder.</p>
+<p>. In this file the schema of the data is defined.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
+    Schema <span style="color: #333333">=</span> mongoose.Schema,
+    crypto <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;crypto&#39;</span>);
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * A Validation function for local strategy properties</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">var</span> validateLocalStrategyProperty <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(property) {
+    <span style="color: #008800; font-weight: bold">return</span> ((<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span style="background-color: #fff0f0">&#39;local&#39;</span> <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.updated) <span style="color: #333333">||</span> property.length);
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * A Validation function for local strategy password</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">var</span> validateLocalStrategyPassword <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(password) {
+    <span style="color: #008800; font-weight: bold">return</span> (<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span style="background-color: #fff0f0">&#39;local&#39;</span> <span style="color: #333333">||</span> (password <span style="color: #333333">&amp;&amp;</span> password.length <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">6</span>));
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * User Schema</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">var</span> UserSchema <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Schema({
+
+    firstName<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
+            <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your first name&#39;]</span>
+    },
+    lastName<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
+            <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your last name&#39;]</span>
+    },
+
+    displayName<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    email<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
+        unique<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Email already exists&#39;</span>,
+
+        <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your email&#39;],</span>
+        match<span style="color: #333333">:</span> [<span style="color: #000000; background-color: #fff0ff">/.+\@.+\..+/</span>, <span style="background-color: #fff0f0">&#39;Please fill a valid email address&#39;</span>]
+    },
+    username<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #888888">//unique: true,</span>
+        <span style="color: #888888">//required: &#39;Please fill in a username&#39;,</span>
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    photo<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;http://www.ee-ip.org/sites/default/files/default_images/default-user.png&#39;</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    description<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    linkedin<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    twitter<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
+    },
+    password<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        validate<span style="color: #333333">:</span> [validateLocalStrategyPassword, <span style="background-color: #fff0f0">&#39;Password should be longer&#39;</span>]
+    },
+    salt<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>
+    },
+    provider<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+        required<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Provider is required&#39;</span>
+    },
+    providerData<span style="color: #333333">:</span> {},
+    additionalProvidersData<span style="color: #333333">:</span> {},
+    roles<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> [{
+            type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
+            <span style="color: #008800; font-weight: bold">enum</span><span style="color: #333333">:</span> [<span style="background-color: #fff0f0">&#39;user&#39;</span>, <span style="background-color: #fff0f0">&#39;admin&#39;</span>]
+        }],
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> [<span style="background-color: #fff0f0">&#39;user&#39;</span>]
+    },
+    updated<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">Date</span>
+    },
+    created<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">Date</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="color: #007020">Date</span>.now
+    },
+    <span style="color: #888888">/* For reset password */</span>
+    resetPasswordToken<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">String</span>
+    },
+    resetPasswordExpires<span style="color: #333333">:</span> {
+        type<span style="color: #333333">:</span> <span style="color: #007020">Date</span>
+    }
+});
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Hook a pre save method to hash the password</span>
+<span style="color: #888888"> */</span>
+UserSchema.pre(<span style="background-color: #fff0f0">&#39;save&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(next) {
+    <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.password <span style="color: #333333">&amp;&amp;</span> <span style="color: #008800; font-weight: bold">this</span>.password.length <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">6</span>) {
+        <span style="color: #008800; font-weight: bold">this</span>.salt <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Buffer(crypto.randomBytes(<span style="color: #0000DD; font-weight: bold">16</span>).toString(<span style="background-color: #fff0f0">&#39;base64&#39;</span>), <span style="background-color: #fff0f0">&#39;base64&#39;</span>);
+        <span style="color: #008800; font-weight: bold">this</span>.password <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.hashPassword(<span style="color: #008800; font-weight: bold">this</span>.password);
+    }
+
+    next();
+});
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Create instance method for hashing a password</span>
+<span style="color: #888888"> */</span>
+UserSchema.methods.hashPassword <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(password) {
+    <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.salt <span style="color: #333333">&amp;&amp;</span> password) {
+        <span style="color: #008800; font-weight: bold">return</span> crypto.pbkdf2Sync(password, <span style="color: #008800; font-weight: bold">this</span>.salt, <span style="color: #0000DD; font-weight: bold">10000</span>, <span style="color: #0000DD; font-weight: bold">64</span>).toString(<span style="background-color: #fff0f0">&#39;base64&#39;</span>);
+    } <span style="color: #008800; font-weight: bold">else</span> {
+        <span style="color: #008800; font-weight: bold">return</span> password;
+    }
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Create instance method for authenticating user</span>
+<span style="color: #888888"> */</span>
+UserSchema.methods.authenticate <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(password) {
+    <span style="color: #008800; font-weight: bold">return</span> <span style="color: #008800; font-weight: bold">this</span>.password <span style="color: #333333">===</span> <span style="color: #008800; font-weight: bold">this</span>.hashPassword(password);
+};
+
+
+<span style="color: #008800; font-weight: bold">var</span> User <span style="color: #333333">=</span> mongoose.model(<span style="background-color: #fff0f0">&#39;User&#39;</span>, UserSchema);
+module.exports <span style="color: #333333">=</span> User;
+</pre></td></tr></table></div>
+
+<p>fig: example user model</p>
+
+<p>2) Make a server.routes.js file where the backend API routes are written, also the server.controller.js file is imported so its functions can be used.</p>
+<p>Depending on which route is called from the store, the appropriate function will run and return data if necessary.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> passport <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;passport&#39;</span>);
+
+module.exports <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(app) {
+	<span style="color: #888888">// User Routes</span>
+	<span style="color: #008800; font-weight: bold">var</span> users <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../controllers/users.server.controller&#39;</span>);
+
+	<span style="color: #888888">// Setting up the users profile api</span>
+	app.route(<span style="background-color: #fff0f0">&#39;/users/me&#39;</span>).get(users.me);
+	app.route(<span style="background-color: #fff0f0">&#39;/users/:userId&#39;</span>).get(users.read);
+	app.route(<span style="background-color: #fff0f0">&#39;/users/:userId&#39;</span>).put(users.update);
+	app.route(<span style="background-color: #fff0f0">&#39;/users/accounts&#39;</span>).<span style="color: #008800; font-weight: bold">delete</span>(users.removeOAuthProvider);
+
+	<span style="color: #888888">// Setting up the users password api</span>
+	app.route(<span style="background-color: #fff0f0">&#39;/users/password&#39;</span>).post(users.changePassword);
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/forgot&#39;</span>).post(users.forgot);
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/reset/:token&#39;</span>).get(users.validateResetToken);
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/reset/:token&#39;</span>).post(users.reset);
+
+	<span style="color: #888888">// Setting up the users authentication api</span>
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/signup&#39;</span>).post(users.signup);
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/signin&#39;</span>).post(users.signin);
+	app.route(<span style="background-color: #fff0f0">&#39;/auth/signout&#39;</span>).get(users.signout);
+
+	app.param(<span style="background-color: #fff0f0">&#39;userId&#39;</span>, users.userByID);
+};
+</pre></td></tr></table></div>
+
+
+<p>fig: backend API routes</p>
+
+<p>The route <i>'/auth/signup'</i> helps a user get signup and get signed in.</p>
+
+<p>The route <i>'/auth/signin'</i> helps a user get signed in.</p>
+
+<p>The route <i>'/auth/signout'</i> helps a user signout.</p>
+
+
+<p>app.param gets a single user from the database if the url param contains an id.</p>
+
+
+<p>3) Make a users.server.controller.js file in the controllers folder where the all the user related controllers are required.</p>
+<p>This file gives access all the functions that the server.routes.js uses such as signin, signout, etc.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>);
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Extend user&#39;s controller</span>
+<span style="color: #888888"> */</span>
+module.exports <span style="color: #333333">=</span> _.extend(
+	require(<span style="background-color: #fff0f0">&#39;./users/users.authentication.server.controller&#39;</span>),
+	require(<span style="background-color: #fff0f0">&#39;./users/users.authorization.server.controller&#39;</span>),
+	require(<span style="background-color: #fff0f0">&#39;./users/users.password.server.controller&#39;</span>),
+	require(<span style="background-color: #fff0f0">&#39;./users/users.profile.server.controller&#39;</span>)
+);
+</pre></td></tr></table></div>
+
+<p>4) In the controllers folder, inside the user folder are files that are mentioned above.</p>
+<p>Using the functions in users.authentication.server.controller we signin, signout and signup.</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>),
+	errorHandler <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;../errors.server.controller&#39;</span>),
+	mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
+	passport <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;passport&#39;</span>),
+	User <span style="color: #333333">=</span> mongoose.model(<span style="background-color: #fff0f0">&#39;User&#39;</span>);
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Signup</span>
+<span style="color: #888888"> */</span>
+exports.signup <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+	<span style="color: #888888">// For security measurement we remove the roles from the req.body object</span>
+	<span style="color: #008800; font-weight: bold">delete</span> req.body.roles;
+
+	<span style="color: #888888">// Init Variables</span>
+	<span style="color: #008800; font-weight: bold">var</span> user <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> User(req.body);
+	<span style="color: #008800; font-weight: bold">var</span> message <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>;
+
+	<span style="color: #888888">// Add missing user fields</span>
+	user.provider <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;local&#39;</span>;
+	<span style="color: #888888">//user.displayName = user.firstName + &#39; &#39; + user.lastName;</span>
+	<span style="color: #888888">//user.displayName =user.fullName;</span>
+	<span style="color: #888888">// Then save the user</span>
+	user.save(<span style="color: #008800; font-weight: bold">function</span>(err) {
+		<span style="color: #008800; font-weight: bold">if</span> (err) {
+			<span style="color: #008800; font-weight: bold">return</span> res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send({
+				message<span style="color: #333333">:</span> errorHandler.getErrorMessage(err)
+			});
+		} <span style="color: #008800; font-weight: bold">else</span> {
+			<span style="color: #888888">// Remove sensitive data before login</span>
+			user.password <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">undefined</span>;
+			user.salt <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">undefined</span>;
+
+			req.login(user, <span style="color: #008800; font-weight: bold">function</span>(err) {
+				<span style="color: #008800; font-weight: bold">if</span> (err) {
+					res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send(err);
+				} <span style="color: #008800; font-weight: bold">else</span> {
+					res.json(user);
+				}
+			});
+		}
+	});
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Signin after passport authentication</span>
+<span style="color: #888888"> */</span>
+exports.signin <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res, next) {
+	console.log(<span style="background-color: #fff0f0">&quot;sign in &quot;</span>);
+	console.log(req.body);
+
+	passport.authenticate(<span style="background-color: #fff0f0">&#39;local&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(err, user, info) {
+	<span style="color: #888888">//	console.log(user);</span>
+		<span style="color: #008800; font-weight: bold">if</span> (err <span style="color: #333333">||</span> <span style="color: #333333">!</span>user) {
+			console.log(err);
+			res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send(info);
+		} <span style="color: #008800; font-weight: bold">else</span> {
+			<span style="color: #888888">// Remove sensitive data before login</span>
+			user.password <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">undefined</span>;
+			user.salt <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">undefined</span>;
+
+			req.login(user, <span style="color: #008800; font-weight: bold">function</span>(err) {
+				<span style="color: #008800; font-weight: bold">if</span> (err) {
+					res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send(err);
+				} <span style="color: #008800; font-weight: bold">else</span> {
+					res.json(user);
+				}
+			});
+		}
+	})(req, res, next);
+};
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Signout</span>
+<span style="color: #888888"> */</span>
+exports.signout <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
+	req.logout(<span style="color: #008800; font-weight: bold">function</span>(){
+		<span style="color: #008800; font-weight: bold">if</span>(err){
+			console.log(err);
+		}
+	});
+	res.status(<span style="color: #0000DD; font-weight: bold">200</span>).send({message<span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;signed out&quot;</span>});
+};
+
+};
+</pre></td></tr></table></div>
+
+<p>fig: example user authentication controller</p>
+</div>
+
+
+
+                <!-- /*********************** new signup backend end **********************/ -->
 
             </div>
 
