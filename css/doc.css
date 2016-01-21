@@ -3,7 +3,7 @@
   position: fixed;
   margin-left: 50px;
 }
-.codeExmp{
+/*.codeExmp{
   white-space: pre-line;
   font-family: Consolas, monaco, monospace;
   font-weight: bolder;
@@ -12,7 +12,7 @@
     border-radius: 3px;
     padding: 1em 3em;
     max-width: 50%;
-}
+}*/
 
 .codeInsidePgrph{
   font-family: Consolas, monaco, monospace;

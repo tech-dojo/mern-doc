@@ -75,7 +75,7 @@
               <a href="#gettingStarted">Getting Started</a>
             </li>
             <li>
-              <a href="#createArticleComponent">Component</a>
+              <a href="#component">Component</a>
             </li>
             <li>
               <a href="#architectureDataFlow">Architecture & Data Flow</a>
@@ -176,15 +176,15 @@
  8
  9
 10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
-              constructor(props, context){
-                  ...
-                  ArticleStore.fetchArticleList();
-                  ...
-                }
-              ...
-            }
+  constructor(props, context){
+    ...
+    ArticleStore.fetchArticleList();
+    ...
+      }
+    ...
+  }
 
-            <b>FIG</b><span style="color: #333333">:</span> Article List Component
+<b>FIG</b><span style="color: #333333">:</span> Article List Component
 </pre></td></tr></table></div>
 
           <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
@@ -201,11 +201,12 @@
 2
 3
 4
-5</pre></td><td><pre style="margin: 0; line-height: 125%">       _onChange() {
-              <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
-              }
+5</pre></td><td><pre style="margin: 0; line-height: 125%">
+_onChange() {
+  <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
+  }
 
-              <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
 </pre></td></tr></table></div>
 
           <p>
@@ -274,7 +275,7 @@ when the data is successfully fetched so the registered changeListeners are run.
 <h2>Data Flow Model</h2>
 <img style="max-width: 100%;" src="images/image00.png"/>
         </div>
-        <div id="createArticleComponent">
+        <div id="component">
           <h4>1. Create Article Component</h4>
           <p>
             This is example of a simple but realistic <b>CreateArticle.jsx</b> component. Let’s straight get into the code,
@@ -688,6 +689,155 @@ from the list which is needed to updated.
 
 <p>It allows the user to view an article ,delete an article,and provides the link for the edit article.
   Delete and edit Works only, when the user is logged in.
+</p>
+
+<h4>3. View Article Component</h4>
+
+<p>
+  The <b>ViewArticle.jsx</b> component is almost similar with the <b>EditArticle.jsx</b> component,
+  so only the distinguish methods will be discussed in this part,
+</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> { Link } from <span style="background-color: #fff0f0">&#39;react-router&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span style="background-color: #fff0f0">&#39;react-router-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> auth from <span style="background-color: #fff0f0">&#39;./../../services/Authentication&#39;</span>;
+
+<span style="color: #008800; font-weight: bold">function</span> getArticle() {
+    <span style="color: #008800; font-weight: bold">return</span> {article<span style="color: #333333">:</span> ArticleStore.getArticle()}
+}
+
+<span style="color: #008800; font-weight: bold">class</span> ViewArticle <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props, context){
+    <span style="color: #008800; font-weight: bold">super</span>(props, context);
+    ArticleStore.fetchArticle(props.params.id);
+    ArticleStore.fetchArticleList();
+    <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.article <span style="color: #333333">=</span> {};
+    <span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">=</span> auth.loggedIn();
+    <span style="color: #008800; font-weight: bold">this</span>.state.articleID <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.props.params.id;
+    <span style="color: #008800; font-weight: bold">this</span>._onChange <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>._onChange.bind( <span style="color: #008800; font-weight: bold">this</span> );
+    <span style="color: #008800; font-weight: bold">this</span>.deleteArticle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.deleteArticle.bind(<span style="color: #008800; font-weight: bold">this</span>);
+  }
+
+  componentWillMount() {
+    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+ componentWillUnmount() {
+    ArticleStore.removeChangeListener(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+  _onChange() {
+    <span style="color: #008800; font-weight: bold">this</span>.setState( getArticle());
+  }
+
+  deleteArticle() {
+     ArticleStore.deleteArticle(<span style="color: #008800; font-weight: bold">this</span>.state.articleID, <span style="color: #008800; font-weight: bold">this</span>.props.history);
+  }
+
+  render(){
+          <span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.state.article;
+          console.log (<span style="background-color: #fff0f0">&#39;Get Article ViewArticle&#39;</span> <span style="color: #333333">+</span> getArticle());
+
+  		<span style="color: #008800; font-weight: bold">return</span> (
+        <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
+        <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>h1<span style="color: #333333">&gt;</span>{article.title}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h1&gt;</span>
+          <span style="color: #333333">&lt;</span>hr<span style="color: #333333">&gt;&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/hr&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+          <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>}<span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>h3<span style="color: #333333">&gt;</span>{article.content}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h3&gt;</span>
+        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+        <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>}<span style="color: #333333">&gt;</span>
+          {<span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">&lt;</span>div className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;pull-right&quot;</span><span style="color: #333333">&gt;</span>
+            <span style="color: #333333">&lt;</span>LinkContainer className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;editBtnCSS&quot;</span> to<span style="color: #333333">=</span>{<span style="color: #FF0000; background-color: #FFAAAA">`</span><span style="color: #333333">/</span>articles<span style="color: #333333">/</span>edit<span style="color: #333333">/</span>${article._id}<span style="color: #FF0000; background-color: #FFAAAA">`</span>}<span style="color: #333333">&gt;&lt;</span>Button  bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">&gt;</span>Edit<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;&lt;/LinkContainer&gt;</span>
+            <span style="color: #333333">&lt;</span>Button onClick<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.deleteArticle} bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;danger&quot;</span><span style="color: #333333">&gt;</span>Delete<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;</span>
+          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/div&gt;</span>
+          }
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+         <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+      )
+    }
+}
+
+<span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> ViewArticle;
+</pre></td></tr></table></div>
+<p>
+  It allows the user to view an article ,delete an article,and provides the link for the edit article.
+Delete and edit Works only, when the user is logged in.
+</p>
+
+<p>
+  Inside the <span class="codeInsidePgrph">render(){...} this.state.loggedIn &&</span> shows the Edit & Delete Button if the user logged in. 
+
 </p>
         </div>
       </div>
