@@ -103,7 +103,7 @@
           <h4><b>Node.js & npm Install</b></h4>
 
           <div>
-            <ul>
+            <ul class="shellCommands">
               <li> $ sudo apt-get install curl </li>
               <li>$ curl -sL https://deb.nodesource.com/setup | sudo bash - </li>
               <li>$ sudo apt-get install -y nodejs </li>
@@ -115,7 +115,7 @@
 
           <h4><b>MongoDB Install</b></h4>
           <div>
-            <ul>
+            <ul class="shellCommands">
               <li>$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</li>
               <li>$ echo "deb http://repo.mongodb.org/apt/ubuntu</li>
               <li>$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</li>
@@ -126,7 +126,7 @@
           <h4><b>Git Install/Clone</b></h4>
 
           <div>
-            <ul>
+            <ul class="shellCommands">
               <li>$ sudo apt-get update</li>
               <li>$ sudo apt-get install git</li>
               <li>$ sudo git clone https://github.com/<i>(Clone ReactFramework)</i></li>
@@ -136,24 +136,25 @@
           <h4><b>After cloning the project from github to run the app</b></h4>
 
           <div>
-            <ul>
-              <p>Make sure <b>mongodb</b> is running, to run <b>mongodb</b></p>
-              <li>$ mongod</li>
-              <br></br>
-              <p>Install global dependencies with </b>
-              </p>
 
+              <p>Make sure <b>mongodb</b> is running, to run <b>mongodb</b>,</p>
+            <ul class="shellCommands">
+              <li>$ mongod</li>
+            </ul>
+              <p>Install global dependencies with,</p>
+            <ul class="shellCommands">
               <li>$ npm install -g gulp bower react-tools browserify</li>
-              <br></br>
-              <p>Install dependencies with </p>
+            </ul>
+              <p>Install dependencies with,</p>
+            <ul class="shellCommands">
               <li>$ npm install</li>
-              <br></br>
-              <p>Run app with </p>
+            </ul>
+              <p>Run app with,</p>
+            <ul class="shellCommands">
               <li>$ gulp serve</li>
             </ul>
           </div>
         </div>
-        <br></br>
         <div id="architectureDataFlow">
           <h1>Architecture & Data Flow</h1>
           <p>The application architecture used on the client-side for data flow between the React components and the
@@ -836,7 +837,7 @@ Delete and edit Works only, when the user is logged in.
 </p>
 
 <p>
-  Inside the <span class="codeInsidePgrph">render(){...} this.state.loggedIn &&</span> shows the Edit & Delete Button if the user logged in. 
+  Inside the <span class="codeInsidePgrph">render(){...} this.state.loggedIn &&</span> shows the Edit & Delete Button if the user logged in.
 
 </p>
         </div>
