@@ -65,7 +65,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-2 ">
-        <div>
+        <nav>
           <ul class="nav nav-pills nav-stacked menuCss">
             <li>
               <a href="#gettingStarted">Getting Started</a>
@@ -74,15 +74,38 @@
               <a href="#folderStructure">Folder Structure</a>
             </li>
             <li>
-              <a href="#uif">Understanding the Framework</a>
+              <a href="#utf">Understanding the Framework</a>
+              <ul class="subSection">
+                <ul>
+                  <a href="#clientSideArticle">Client Side (Article)</a>
+                </ul>
+                <ul>
+                  <a href="#serverSideArticle">Server Side (Article)</a>
+              </ul>
+              <ul>
+                <a href="#clientSideSignUp">Client Side (Sign Up)</a>
+              </ul>
+              <ul>
+                <a href="#serverSideSignUp">Server Side (Sign Up)</a>
+            </ul>
+              </ul>
+            </li>
+            <li>
+              <a href="#isomorphic">Isomorphic</a>
+            </li>
+            <li>
+              <a href="#testCode">Test Code</a>
             </li>
           </ul>
-        </div>
+        </nav>
+
       </div>
-      <div class="col-lg-1 col-md-1 col-sm-1 "></div>
-      <div class="col-lg-9 col-md-9 col-sm-9" style="border-left: 1px solid red">
-        <div id="gettingStarted">
+
+      <div id="gettingStarted" class="col-lg-1 col-md-1 col-sm-1"></div>
+      <div class="col-lg-9 col-md-9 col-sm-9">
+        <div>
           <h1>Getting Started</h1>
+          <hr>
           <p>
             The React Framework is designed to be as natural as possible for a web developer to build a great web
             application, focusing on using the standard HTML, CSS, and Javascript.
@@ -126,26 +149,27 @@
 
           <div>
 
-              <p class="l-sub-section">Make sure <b>mongodb</b> is running, to run <b>mongodb</b>,</p>
+              <p><span class="l-sub-section">Make sure <b>mongodb</b> is running, to run <b>mongodb</b>,</span></p>
             <ul class="shellCommands">
               <li>$ mongod</li>
             </ul>
-              <p class="l-sub-section">Install global dependencies with,</p>
+              <p><span class="l-sub-section">Install global dependencies with,</span></p>
             <ul class="shellCommands" >
               <li>$ npm install -g gulp bower react-tools browserify</li>
             </ul>
-              <p class="l-sub-section">Install dependencies with,</p>
-            <ul class="shellCommands" id="folderStructure">
+              <p><span class="l-sub-section">Install dependencies with,</span></p>
+            <ul class="shellCommands">
               <li>$ npm install</li>
             </ul>
-              <p class="l-sub-section">Run app with,</p>
+              <p><span class="l-sub-section">Run app with,</span></p>
             <ul class="shellCommands">
-              <li>$ gulp serve</li>
+              <li id="folderStructure">$ gulp serve</li>
             </ul>
           </div >
         </div>
 <div>
 <h1>Folder Structure</h1>
+<hr>
 <p>The basic structure for this project is quite simple:</p>
 <p class="shellCommands">
 |-.tmp
@@ -188,20 +212,20 @@
 
 <p>Front-end folders and files are stored here.</p>
 
-<h4>Components</h4>
+<h4><span class="folderName-title">Components</span></h4>
 
 <p>The components folder contain React JS application components, to learn more about it visit the <a target="blank" href="https://facebook.github.io/react/docs/component-api.html">React JS components section</a>.</p>
 
-  <h4>Services</h4>
+  <h4><span class="folderName-title">Services</span></h4>
       <p>All the services are stored here and it can be used in multiple componets.</p>
-  <h4>Stores</h4>
+  <h4><span class="folderName-title">Stores</span></h4>
 
      <p>Stores contain the application state and logic. The apps' stores are stored in this folder, to learn more about store, see <a target="blank" href="https://facebook.github.io/flux/docs/overview.html#stores">Flux Architecture</a>.</p>
 
-        <span class="fileName-title ">Index.ejs</span>
+        <span class="fileName-title">Index.ejs</span>
 
         <p>The react app gets mounted using,
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
+          <!-- HTML generated using hilite.me --><div class="common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
    <span style="color: #007700">&lt;/div&gt;</span>
 </pre></div>
           </p>
@@ -217,19 +241,19 @@
 
         <p>Server folder contains the server files used in the application.</p>
 
-       <h4>Controllers</h4>
+       <h4><span class="folderName-title">Controllers</span></h4>
 
        <p>The controllers folder contain Express application controllers which deals with backend business logic.</p>
 
-       <h4>Models</h4>
+       <h4><span class="folderName-title">Models</span></h4>
 
        <p>The models folder contain Mongoose models.</p>
 
-       <h4>Routes</h4>
+       <h4><span class="folderName-title">Routes<span></h4>
 
        <p>The routes folder contains the Server routing configuration files. The Express routes are defined here. </p>
 
-       <h4>Strategies</h4>
+       <h4><span class="folderName-title">Strategies</span></h4>
 
        <p>The <b>strategies</b> folder contains the strategies configuration files loaded by the <b>passport.js</b> file.</p>
 
@@ -258,29 +282,30 @@
 
 <p>Gulp is a default JavaScript task runner.</p>
 
-       <h2 id="uif">.tmp</h2>
+       <h2>.tmp</h2>
 
-       <p>This folder stores the raw javascript code in <span class="codeInsidePgrph">app.js</span> for the browser.
+       <p id="utf">This folder stores the raw javascript code in <span class="codeInsidePgrph">app.js</span> for the browser.
           Using browserify all the jsx files are compiled to <span class="codeInsidePgrph">app.js</span>.</p>
   </div>
-        <div>
+<div>
           <h1>Understanding the Framework</h1>
+          <hr>
 
           <h2>Data Flow Model</h2>
-                 <img style="max-width: 100%;" src="images/image00.png"/>
+                 <img class="common-margin-bottom" style="max-width: 100%;" src="images/image00.png"/>
 
 
 
           <div>
-                    <h1>Architecture & Data Flow</h1>
+
                     <p>The application architecture used on the client-side for data flow between the React components and the
                       backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
                       - <b>stores</b> and <b>views.</b>
                     </p>
-                    <h2>Flow of Data</h2>
+
                     <p>Let’s discuss the data flow in  Article list view component from the framework.</p>
 
-                    <p class="l-sub-section">In order to access the Article list component, the user first needs to go to the url "/articles" from the <span class="codeInsidePgrph">app.jsx</span> file.</p>
+                    <p><span class="l-sub-section">In order to access the Article list component, the user first needs to go to the url "/articles" from the <span class="codeInsidePgrph">app.jsx</span> file.</span></p>
 
           <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
@@ -327,12 +352,11 @@
                     <p class="l-sub-section">The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
                       the database using the appropriate <b>API</b> call.
                     </p>
-                  </br>
-                    <li>
+                    <p>
                       <b>
                       So when this article list data returns successfully, how is this data rendered in the article list view?
                       </b>
-                    </li>
+                    </p>
 
           <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
@@ -361,11 +385,10 @@ _onChange() {
 
 <b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
 </pre></td></tr></table></div>
-          </br>
 
           <p class="l-sub-section"><span class="codeInsidePgrph">(this._onChange)</span> is being pushed to a changeListener array in the store's onChange method, shown below</p>
 
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
 3
 4
@@ -377,9 +400,9 @@ _onChange() {
 </pre></td></tr></table></div>
 
           <p> The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
-          after the data is successfully fetched,and calling the registered callbacks from the array.Then  the _onChange() method in react components are executed.
+          after the data is successfully fetched,and calling the registered callbacks from the array.Then  the <span class="codeInsidePgrph">_onChange()</span> method in react components are executed.
           </p>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
 3
 4
@@ -394,7 +417,7 @@ _onChange() {
 <b>FIG</b><span style="color: #333333">:</span> Running each registered listener function
 </pre></td></tr></table></div>
 
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
 3
 4
@@ -411,7 +434,7 @@ _onChange() {
 <b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
 </pre></td></tr></table></div>
 
-<p><span class="codeInsidePgrph">this.setState(getArticleList());</span>renders the ListArticles component with the updated data.</p>
+<p id="clientSideArticle"><span class="codeInsidePgrph">this.setState(getArticleList());</span>renders the ListArticles component with the updated data.</p>
 
 
 
@@ -420,13 +443,13 @@ _onChange() {
 
 
 
-          <h2>Article</h2>
+          <h2>Client Side (Article)</h2>
           <h4>Create Article Component</h4>
           <p>
             To understand the framework, start with the example <b>CreateArticle.jsx</b> component. Let’s get straight into the code,
           </p>
 <div class="example-title">CreateArticle.jsx</div>
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+          <!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -537,12 +560,12 @@ _onChange() {
             and the <span class="codeInsidePgrph">handleInputContent(e) {...}</span> takes the input from the user for the Article Title and Article Content.
             Finally the <span class="codeInsidePgrph">_formSubmit(e) {...}</span> submit the newly created article.
           </p>
-          <h4>2. Edit Article Component</h4>
+          <h4>Edit Article Component</h4>
           <p>
             In this part <b>EditArticle.jsx</b> component will be discussed. Let’s start with the code,
           </p>
 <div class="example-title">EditArticle.jsx</div>
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+          <!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -694,14 +717,14 @@ from the list to be updated.
   the <span class="codeInsidePgrph">_formSubmit(e) {...}</span> submit the updated article.
 </p>
 
-<h4>3. View Article Component</h4>
+<h4>View Article Component</h4>
 
 <p>
   The <b>ViewArticle.jsx</b> component is almost similar with the <b>EditArticle.jsx</b> component, It allows
   the user to <b>view</b>, <b>delete</b> and <b>edit</b> an article. <b>Delete</b> and <b>edit</b> works only if the user is logged in.
 </p>
 <div class="example-title">ViewArticle.jsx</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -765,8 +788,7 @@ from the list to be updated.
 62
 63
 64
-65
-66</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+65</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
 <span style="color: #008800; font-weight: bold">import</span> { Link } from <span style="background-color: #fff0f0">&#39;react-router&#39;</span>;
 <span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
 <span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>;
@@ -806,7 +828,6 @@ from the list to be updated.
 
   render(){
           <span style="color: #008800; font-weight: bold">var</span> article <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.state.article;
-          console.log (<span style="background-color: #fff0f0">&#39;Get Article ViewArticle&#39;</span> <span style="color: #333333">+</span> getArticle());
 
   		<span style="color: #008800; font-weight: bold">return</span> (
         <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
@@ -834,7 +855,7 @@ from the list to be updated.
 <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> ViewArticle;
 </pre></td></tr></table></div>
 
-<p>
+<p id = "serverSideArticle">
   Inside the <span class="codeInsidePgrph">render(){...} this.state.loggedIn &&</span> shows the Edit & Delete Button if the user logged in.
 
 </p>
@@ -842,14 +863,14 @@ from the list to be updated.
         <!-- /*********************** new component backend start**********************/ -->
 
              <div>
-             <h2>Backend for Component</h2>
+             <h2>Server Side (Article)</h2>
 
 
             <p class="l-sub-section">
               The <span class="codeInsidePgrph">Article.js</span> contains the article schema using mongoose.
             </p>
 <div class="example-title">Article.js</div>
-              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
+              <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
      1
      2
      3
@@ -879,15 +900,13 @@ from the list to be updated.
     27
     28
     29
-    30
-    31</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>);
+    30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>);
     <span style="color: #008800; font-weight: bold">var</span> Schema <span style="color: #333333">=</span> mongoose.Schema;
     <span style="color: #008800; font-weight: bold">var</span> ArticleSchema <span style="color: #333333">=</span> {
 
       title<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
-      <span style="color: #888888">//  required: &#39;Please fill Article title&#39;,</span>
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
       },
 
@@ -918,7 +937,7 @@ from the list to be updated.
   Backend API routes are written in <span class="codeInsidePgrph">server.routes.js</span>. Depending on the route being called, the appropriate function will be executed.
 </p>
 <div class="example-title">article.server.routes.js</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;background-color: #f5f5f5;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -990,7 +1009,7 @@ the article with the id <b>569cbefe877baaf001e43b7f</b> can be deleted.
 </p>
 
 
-<p><span class="codeInsidePgrph">app.param</span> gets a single article from the database if the url param contains an id parameter.</p>
+<p><span class="codeInsidePgrph">app.param</span> gets a single article from the database if the url param contains an <b>id</b> parameter.</p>
 
 
 <p class="l-sub-section">The CRUD operation functions are defined in the <span class="codeInsidePgrph">server.controller.js</span> file. </p>
@@ -998,7 +1017,7 @@ the article with the id <b>569cbefe877baaf001e43b7f</b> can be deleted.
  <span class="codeInsidePgrph">server.controller.js</span> provides all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as list, create, etc.</p>
 
 <div class="example-title">articles.server.controller.js</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;background-color: #f5f5f5;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -1193,7 +1212,7 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 <span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
 <span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.836Z&quot;</span>
 <span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 3&quot;</span>
-<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 3&quot;</span>
+<span  id="clientSideSignUp" style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 3&quot;</span>
 }
 </pre></td></tr></table></div>
            </div>
@@ -1201,12 +1220,12 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 
            <!-- /*********************** new component backend end **********************/ -->
       <div>
-           <h1>Sign Up Component</h1>
+           <h2>Client Side (Sign Up)</h2>
            <p>
              The <b>Signup.jsx</b> component is all about creating a new user to the the application. The following instructions will show how to signup a user with validation in the front-end.
            </p>
 
-           <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+           <!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
   2
   3
   4
@@ -1526,10 +1545,11 @@ The <span class="codeInsidePgrph">handleInputEmail(e){...}</span> and <span clas
 
 <span class="codeInsidePgrph">validateEmail(email){...}</span> returns a boolean whether the given email address is valid or not using the regex expression.
 
-Finally, <span class="codeInsidePgrph">formSubmit(e){...}</span>
+Finally, <span  id="serverSideSignUp" class="codeInsidePgrph">formSubmit(e){...}</span>
 adds a new user by calling auth.signup(newUser);  using the <b>authentication.js</b> service.
 If the user provides invalid information, error messages are shown.
 </p>
+<h2>Server Side (Sign Up)</h2>
 <h4>Authentication.js</h4>
 
 <p><span class="codeInsidePgrph">signup(userInfo){...}</span> creates a user.</p>
@@ -1548,7 +1568,7 @@ front-end cookie or use the token system that is stored in the front end.
 
 <p class="l-sub-section"><span class="codeInsidePgrph">User.js</span> file contains the schema of the user</p>
 <div class="example-title">User.js</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; background-color: #f5f5f5;overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
   2
   3
   4
@@ -1689,9 +1709,7 @@ front-end cookie or use the token system that is stored in the front end.
 139
 140
 141
-142
-143
-144</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
+142</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
     Schema <span style="color: #333333">=</span> mongoose.Schema,
     crypto <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;crypto&#39;</span>);
 
@@ -1718,31 +1736,29 @@ front-end cookie or use the token system that is stored in the front end.
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
         <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
-            <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your first name&#39;]</span>
-    },
+              },
+
     lastName<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
         <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
-            <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your last name&#39;]</span>
+
     },
 
     displayName<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
+
     email<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
         unique<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Email already exists&#39;</span>,
 
-        <span style="color: #888888">//validate: [validateLocalStrategyProperty, &#39;Please fill in your email&#39;],</span>
         match<span style="color: #333333">:</span> [<span style="color: #000000; background-color: #fff0ff">/.+\@.+\..+/</span>, <span style="background-color: #fff0f0">&#39;Please fill a valid email address&#39;</span>]
     },
     username<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #888888">//unique: true,</span>
-        <span style="color: #888888">//required: &#39;Please fill in a username&#39;,</span>
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
     photo<span style="color: #333333">:</span> {
@@ -1839,7 +1855,7 @@ module.exports <span style="color: #333333">=</span> User;
 
 <p class="l-sub-section">The backend API routes are written in the <span class="codeInsidePgrph">server.routes.js</span> file. Depending on the API route being called the respective function will be executed.</p>
 <div class="example-title">users.server.routes.js</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div class = "common-margin-bottom" style="background: #ffffff;background-color: #f5f5f5; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -1897,13 +1913,13 @@ module.exports <span style="color: #333333">=</span> <span style="color: #008800
 <p>The route <span class="codeInsidePgrph">'/auth/signout'</span> signs out a user.</p>
 
 
-<p><span class="codeInsidePgrph">app.param</span> gets a single user from the database if the url param contains an id parameter.</p>
+<p><span class="codeInsidePgrph">app.param</span> gets a single user from the database if the url param contains an <b>id</b> parameter.</p>
 
 
 <p class="l-sub-section">All the user related controllers are
   'require' in the <span class="codeInsidePgrph">users.server.controller.js</span> file in the controllers folder.<span class="codeInsidePgrph">users.server.controller.js</span> gives access to all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as signin, signout, etc.</p>
 
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+<!-- HTML generated using hilite.me --><div style="background: #ffffff;background-color: #f5f5f5; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -1929,8 +1945,7 @@ module.exports <span style="color: #333333">=</span> _.extend(
 <p class="l-sub-section">The user folder inside the controllers folder contain all the files mentioned above in the code snippet. Using the functions in
   <span class="codeInsidePgrph">users.authentication.server.controller</span> we signin, signout and signup.</p>
 <div class="example-title">users.authentication.server.controller</div>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
- 1
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
  3
  4
@@ -2010,10 +2025,12 @@ module.exports <span style="color: #333333">=</span> _.extend(
 78
 79
 80
-81
-82
-83
-84</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>),
+81</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="background-color: #fff0f0">&#39;use strict&#39;</span>;
+
+<span style="color: #888888">/**</span>
+<span style="color: #888888"> * Module dependencies.</span>
+<span style="color: #888888"> */</span>
+<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>),
 	errorHandler <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;../errors.server.controller&#39;</span>),
 	mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
 	passport <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;passport&#39;</span>),
@@ -2032,8 +2049,7 @@ exports.signup <span style="color: #333333">=</span> <span style="color: #008800
 
 	<span style="color: #888888">// Add missing user fields</span>
 	user.provider <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;local&#39;</span>;
-	<span style="color: #888888">//user.displayName = user.firstName + &#39; &#39; + user.lastName;</span>
-	<span style="color: #888888">//user.displayName =user.fullName;</span>
+
 	<span style="color: #888888">// Then save the user</span>
 	user.save(<span style="color: #008800; font-weight: bold">function</span>(err) {
 		<span style="color: #008800; font-weight: bold">if</span> (err) {
@@ -2060,13 +2076,9 @@ exports.signup <span style="color: #333333">=</span> <span style="color: #008800
 <span style="color: #888888"> * Signin after passport authentication</span>
 <span style="color: #888888"> */</span>
 exports.signin <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res, next) {
-	console.log(<span style="background-color: #fff0f0">&quot;sign in &quot;</span>);
-	console.log(req.body);
 
 	passport.authenticate(<span style="background-color: #fff0f0">&#39;local&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(err, user, info) {
-	<span style="color: #888888">//	console.log(user);</span>
 		<span style="color: #008800; font-weight: bold">if</span> (err <span style="color: #333333">||</span> <span style="color: #333333">!</span>user) {
-			console.log(err);
 			res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send(info);
 		} <span style="color: #008800; font-weight: bold">else</span> {
 			<span style="color: #888888">// Remove sensitive data before login</span>
@@ -2084,25 +2096,31 @@ exports.signin <span style="color: #333333">=</span> <span style="color: #008800
 	})(req, res, next);
 };
 
-<span id="architectureDataFlow" style="color: #888888">/**</span>
+<span style="color: #888888">/**</span>
 <span style="color: #888888"> * Signout</span>
 <span style="color: #888888"> */</span>
 exports.signout <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
 	req.logout(<span style="color: #008800; font-weight: bold">function</span>(){
 		<span style="color: #008800; font-weight: bold">if</span>(err){
-			console.log(err);
 		}
 	});
 	res.status(<span style="color: #0000DD; font-weight: bold">200</span>).send({message<span style="color: #333333">:</span><span style="background-color: #fff0f0">&quot;signed out&quot;</span>});
 };
-
-};
 </pre></td></tr></table></div>
+
 </div>
                 <!-- /*********************** new signup backend end **********************/ -->
-
-
+<div>
+<h1 id="isomorphic">Isomorphic</h1>
+<hr>
+<h4 style ="color: #777; text-align: center; font-size: 40px">Comming Soon</h4>
+</br>
+<h1 id="testCode">Test Code</h1>
+<hr>
+<h4 style ="color: #777; text-align: center; font-size: 40px">Comming Soon</h4>
+</div>
     </div>
+
       </div>
       <!-- /*********************** Col 9 Div Ends) **********************/ -->
     </div>
