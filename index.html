@@ -61,7 +61,7 @@
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
+        <div class="row jumbotron">
             <div class="col-lg-12 text-center">
                 <h1>Tech Dojo React Framework</h1>
                 <p class="lead">Open-Source Full-Stack Solution For React Applications</p>
@@ -69,6 +69,114 @@
             <div class="col-lg-12 text-center">
                 <button class="btn-lg btn-success">View on GitHub</button>
             </div>
+        </div>
+
+        <div>
+    <h1>Hello World Example</h1>
+    <hr>
+      <h3>The title "Hello World" will be displayed at url localhost:9000/helloworld </h3>
+      <h4>Step 1 : Create a New Compoent HelloWorld.jsx at ../component/core</h4>
+      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
+
+
+<span style="color: #008800; font-weight: bold">class</span> HelloWorld <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(){
+        <span style="color: #008800; font-weight: bold">super</span>();
+  }
+
+  render(){
+
+    <span style="color: #008800; font-weight: bold">return</span> (
+      <span style="color: #333333">&lt;</span>div<span style="color: #333333">&gt;</span>
+        <span style="color: #333333">&lt;</span>h1<span style="color: #333333">&gt;</span>Hello World<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h1&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/div&gt;</span>
+
+      )
+    }
+  }
+  <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> HelloWorld;
+</pre></td></tr></table></div>
+<h4>Step 2 : Add the Route at ../component/App.jsx</h4>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> HelloWorld from <span style="background-color: #fff0f0">&#39;./core/HelloWorld.jsx&#39;</span>;
+... ... ... ... ... ... ... ... ... ... ... ...
+... ... ... ... ... ... ... ... ... ... ... ...
+... ... ... ... ... ... ... ... ... ... ... ...
+
+<span style="color: #333333">&lt;</span>Router history<span style="color: #333333">=</span>{history}<span style="color: #333333">&gt;</span>
+     <span style="color: #333333">&lt;</span>Route path<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;/&quot;</span> component<span style="color: #333333">=</span>{Template}<span style="color: #333333">&gt;</span>
+          ... ... ... ... ... ... ... ... ... ... ... ...
+          ... ... ... ... ... ... ... ... ... ... ... ...
+          <span style="color: #333333">&lt;</span>Route path<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;/helloworld&quot;</span> component<span style="color: #333333">=</span>{HelloWorld}<span style="color: #333333">/&gt;</span>
+      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Route&gt;</span>
+ <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Router&gt;</span>
+</pre></td></tr></table></div>
+
+<h4>Step 3 : Add the Server Side Route at ../server/routes/routeHelper.js</h4>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> routes <span style="color: #333333">=</span> {
+    path<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;/&#39;</span>,
+    component<span style="color: #333333">:</span> require(<span style="background-color: #fff0f0">&#39;./../../app/components/core/Template&#39;</span>),
+    indexRoute<span style="color: #333333">:</span> {
+      component<span style="color: #333333">:</span> require(<span style="background-color: #fff0f0">&#39;./../../app/components/core/Home&#39;</span>)
+    },
+    childRoutes<span style="color: #333333">:</span> [
+      {
+        ... ... ... ... ... ... ... ... ... ... ... ...
+      },
+
+     {
+        path<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;/helloworld&#39;</span>,
+        component<span style="color: #333333">:</span> require(<span style="background-color: #fff0f0">&#39;./../../app/components/core/Home&#39;</span>)
+      }
+   ]
+};
+</pre></td></tr></table></div>
+
         </div>
         <!-- /.row -->
 
