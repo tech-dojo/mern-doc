@@ -31,7 +31,6 @@
     <![endif]-->
 
 </head>
-
 <body>
 
   <!-- Navigation -->
@@ -69,43 +68,27 @@
         <div>
           <ul class="nav nav-pills nav-stacked menuCss">
             <li>
-              <a href="#overview">Overview</a>
-            </li>
-            <li>
               <a href="#gettingStarted">Getting Started</a>
             </li>
             <li>
               <a href="#folderStructure">Folder Structure</a>
             </li>
             <li>
-              <a href="#component">Component</a>
-            </li>
-            <li>
-              <a href="#signUp">Sign Up</a>
-            </li>
-            <li>
-              <a href="#architectureDataFlow">Architecture & Data Flow</a>
+              <a href="#uif">Understanding the Framework</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="col-lg-1 col-md-1 col-sm-1 "></div>
-      <div id="overview" class="col-lg-9 col-md-9 col-sm-9" style="border-left: 1px solid red">
+      <div class="col-lg-9 col-md-9 col-sm-9" style="border-left: 1px solid red">
         <div id="gettingStarted">
-          <h1>Overview</h1>
-          <p>We designed React Framework to be as natural as possible for a web developer to build great web application.</p>
-          <p>We focus on using the standard HTML, CSS, and Javascript, just like you’d use to build a website.</p>
-          <p>We hope you find that React Framework not only makes web application development easier and faster, but we hope it makes it more fun.</p>
-        </div>
-        <div>
           <h1>Getting Started</h1>
-            <p>We designed React Framework to be as natural as possible for a web developer to build great web application.</p>
-            <p>We focus on using the standard HTML, CSS, and Javascript, just like you’d use to build a website.</p>
-            <p>We hope you find that React Framework not only makes web application development easier and faster, but we hope it makes it more fun.</p>
+          <p>
+            The React Framework is designed to be as natural as possible for a web developer to build a great web
+            application, focusing on using the standard HTML, CSS, and Javascript.
+          </p>
           <h2>Prerequisites</h2>
-
-          <p>Before you begin, you should make sure you have installed all these prerequisites on your development machine.</p>
-
+        <p>To start working with the React Framework, the following prerequisites should be installed.</p>
           <h4><b>Node.js & npm Install</b></h4>
 
           <div>
@@ -115,7 +98,7 @@
               <li>$ sudo apt-get install -y nodejs </li>
               <li>$ sudo apt-get install -y build-essential (Recommended for Linux) </li>
               <li>$ npm install -g gulp </li>
-              <li>$ npm install --save gulp gulp-live-server </li>
+              <li>$ npm install --save gulp</li>
             </ul>
           </div>
 
@@ -163,66 +146,88 @@
         </div>
 <div>
 <h1>Folder Structure</h1>
+<p>The basic structure for this project is quite simple:</p>
+<p class="shellCommands">
+|-.tmp
+|-app
 
-<h2>.tmp</h2>
+|------Components
 
-<p>This folder stores the raw javascript code in <span class="codeInsidePgrph">app.js</span> for the browser to read easily.
-   Using browserify all the jsx files are compiled to <span class="codeInsidePgrph">app.js</span>.</p>
+|------------articles
+|------------core
+|------------users
+|------------App.jsx
+
+|------images
+|------services
+
+|------------Authentication.js
+
+|------stores
+|------------ArticleStore.jsx
+|------------RestAPI_Helper.js
+|------------UserStore.jsx
+
+|-server
+|------controllers
+|------models
+|------routes
+|------strategies
+|------express.js
+|------passport.js
+|------seeds.js
+|------server.js
+
+|-.gitignore
+|-gulpfile.js
+|-package.json
+
+</p>
 
 <h2>App</h2>
 
-<p>This is where all the front-end files are stored.</p>
+<p>Front-end folders and files are stored here.</p>
 
 <h4>Components</h4>
 
-<p>The components folder is where you store React JS application components,</p>
-   <p> to learn more about it visit the React JS components section.</p>
+<p>The components folder contain React JS application components, to learn more about it visit the <a target="blank" href="https://facebook.github.io/react/docs/component-api.html">React JS components section</a>.</p>
 
-   <h4>Images</h4>
+  <h4>Services</h4>
+      <p>All the services are stored here and it can be used in multiple componets.</p>
+  <h4>Stores</h4>
 
-   <p>This is where the images that we will use are stored</p>
-
-
-      <h4>Services</h4>
-
-      <p>All the services are stored here and if needed imported from here.</p>
-         <p> Services allow us to keep data across the lifetime of the app
-           and also helps us communicate that data in a consistent way.</p>
-
-
-         <h4>Stores</h4>
-
-         <p>The apps’ stores are all stored in this folder.</p>
-        <p> Exchange of data from the front-end to the backend or vice versa happens here. Once the data is here, any component can use it.</p>
+     <p>Stores contain the application state and logic. The apps' stores are stored in this folder, to learn more about store, see <a target="blank" href="https://facebook.github.io/flux/docs/overview.html#stores">Flux Architecture</a>.</p>
 
         <span class="fileName-title ">Index.ejs</span>
 
-        <p>This is the root file of the app.</p>
+        <p>The react app gets mounted using,
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
+   <span style="color: #007700">&lt;/div&gt;</span>
+</pre></div>
+          </p>
 
         <span class="fileName-title ">Main.jsx</span>
 
-        <p>All the components gets rendered into the root file from here.</p>
+        <p><span class="codeInsidePgrph">ReactDom</span> mounts the app component using,
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">ReactDom.render(<span style="color: #333333">&lt;</span>App<span style="color: #333333">/&gt;</span>,<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;mount&#39;</span>));
+          </pre></div>
+        </p>
 
-        <span class="fileName-title ">Style.css</span>
+          <h2>Server</h2>
 
-        <p>All the css code are written here.</p>
-
-
-        <h2>Server</h2>
-
-        <p>The server folder contains all the server files you use in your application, this is where you store your MVC server files.</p>
+        <p>Server folder contains the server files used in the application.</p>
 
        <h4>Controllers</h4>
 
-       <p>The controllers folder is where you store your Express application controllers, this is where you write your backend business logic.</p>
+       <p>The controllers folder contain Express application controllers which deals with backend business logic.</p>
 
        <h4>Models</h4>
 
-       <p>The models folder is where you store your Mongoose models, this is where you define your backend models.</p>
+       <p>The models folder contain Mongoose models.</p>
 
        <h4>Routes</h4>
 
-       <p>The routes folder contains the <b>Server routing</b> configuration files, this is where you define your Express routes.</p>
+       <p>The routes folder contains the Server routing configuration files. The Express routes are defined here. </p>
 
        <h4>Strategies</h4>
 
@@ -238,45 +243,187 @@
 
        <span class="fileName-title ">Seeds.js</span>
 
-       <p>Seeds contain the initial data that we wanna load our website with if any.</p>
+       <p>Seeds contain the pre-loaded data.</p>
 
        <span class="fileName-title ">Server.js</span>
 
-       <p>Our main application file, where you initialize your Node.js application.</p>
+       <p>Node.js application is initialized here.</p>
 
 
        <h2>Application Files</h2>
 
- <p>There are a few application files stored in root folder.</p>
+ <p>Few application files are stored in the root folder.</p>
 
 <span class="fileName-title ">gulpfile.js</span>
 
-<p>Gulp definition file is where you define your grant tasks, for more information visit the Gulp section.</p>
+<p>Gulp is a default JavaScript task runner.</p>
 
+       <h2 id="uif">.tmp</h2>
 
-<span class="fileName-title ">package.json</span>
+       <p>This folder stores the raw javascript code in <span class="codeInsidePgrph">app.js</span> for the browser.
+          Using browserify all the jsx files are compiled to <span class="codeInsidePgrph">app.js</span>.</p>
+  </div>
+        <div>
+          <h1>Understanding the Framework</h1>
 
-<p>npm definition file, where you configure the backend modules you want to use,
-   for more information visit the NPM section.</p>
-
-
-       <h2 id="component">Hidden Configuration Files</h2>
-
-<span class="fileName-title ">.gitignore</span>
-
-       <p>Git ignore file, you use it to tell git what ignore in next commits. </p>
-        <p> After installation the application generates a lot of code that you don't want to include in your repository,</p>
-         <p> so this is where you tell git to ignore those files.</p>
-
-</div>
+          <h2>Data Flow Model</h2>
+                 <img style="max-width: 100%;" src="images/image00.png"/>
 
 
 
-        <div >
-          <h1>Component</h1>
-          <h4>1. Create Article Component</h4>
+          <div>
+                    <h1>Architecture & Data Flow</h1>
+                    <p>The application architecture used on the client-side for data flow between the React components and the
+                      backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
+                      - <b>stores</b> and <b>views.</b>
+                    </p>
+                    <h2>Flow of Data</h2>
+                    <p>Let’s discuss the data flow in  Article list view component from the framework.</p>
+
+                    <p class="l-sub-section">In order to access the Article list component, the user first needs to go to the url "/articles" from the <span class="codeInsidePgrph">app.jsx</span> file.</p>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;Router</span> <span style="color: #0000CC">history=</span><span style="background-color: #fff0f0">{history}</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span style="background-color: #fff0f0">&quot;/&quot;</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{Template}</span><span style="color: #007700">&gt;</span>
+        <span style="color: #007700">&lt;IndexRoute</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{Home}/</span><span style="color: #007700">&gt;</span>
+        ..............
+        <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span style="background-color: #fff0f0">&quot;/articles&quot;</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{ListArticles}/</span><span style="color: #007700">&gt;</span>
+        ..............
+      <span style="color: #007700">&lt;/Route&gt;</span>
+    <span style="color: #007700">&lt;/Router&gt;</span>
+</pre></td></tr></table></div>
+
+
+                    <p class="l-sub-section">As soon as the Article list view component is initialized, <span class="codeInsidePgrph">ArticleStore.fetchArticleList()</span> function is called.
+                    </p>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
+  constructor(props, context){
+    ...
+    ArticleStore.fetchArticleList();
+    ...
+      }
+    ...
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> Article List Component
+</pre></td></tr></table></div>
+
+                    <p class="l-sub-section">The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
+                      the database using the appropriate <b>API</b> call.
+                    </p>
+                  </br>
+                    <li>
+                      <b>
+                      So when this article list data returns successfully, how is this data rendered in the article list view?
+                      </b>
+                    </li>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">
+_onChange() {
+  <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> onChange function in view
+</pre></td></tr></table></div>
+
+                    <p class="l-sub-section">
+                      The <span class="codeInsidePgrph">_onChange(){...}</span> function in the ListArticles component is registered in the store
+                      as a callback function to be called when the data is available.
+                    </p>
+
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%">componentWillMount() {
+    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
+</pre></td></tr></table></div>
+          </br>
+
+          <p class="l-sub-section"><span class="codeInsidePgrph">(this._onChange)</span> is being pushed to a changeListener array in the store's onChange method, shown below</p>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> onChange(listener) {
+    changeListeners.push(listener);
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> onChange function in store
+</pre></td></tr></table></div>
+
+          <p> The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
+          after the data is successfully fetched,and calling the registered callbacks from the array.Then  the _onChange() method in react components are executed.
+          </p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> triggerListeners() {
+    changeListeners.forEach(<span style="color: #008800; font-weight: bold">function</span>(listener) {
+      listener();
+    })
+  };
+
+<b>FIG</b><span style="color: #333333">:</span> Running each registered listener function
+</pre></td></tr></table></div>
+
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
+    get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
+      articleList <span style="color: #333333">=</span> data;
+      triggerListeners();
+    });
+  }
+
+<b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
+</pre></td></tr></table></div>
+
+<p><span class="codeInsidePgrph">this.setState(getArticleList());</span>renders the ListArticles component with the updated data.</p>
+
+
+
+
+          </div>
+
+
+
+          <h2>Article</h2>
+          <h4>Create Article Component</h4>
           <p>
-            This is example of a simple but realistic <b>CreateArticle.jsx</b> component. Let’s straight get into the code,
+            To understand the framework, start with the example <b>CreateArticle.jsx</b> component. Let’s get straight into the code,
           </p>
 <div class="example-title">CreateArticle.jsx</div>
           <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -386,7 +533,7 @@
 
 
           <p>
-            This component is responsible to add a new Article in the database. The <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>
+            This component is responsible for creating a new Article. The <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>
             and the <span class="codeInsidePgrph">handleInputContent(e) {...}</span> takes the input from the user for the Article Title and Article Content.
             Finally the <span class="codeInsidePgrph">_formSubmit(e) {...}</span> submit the newly created article.
           </p>
@@ -531,15 +678,15 @@
 
 <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> EditArticle;
 </pre></td></tr></table></div>
-<p>This component is responsible for updating an Article in the database.
-<span class="codeInsidePgrph">ArticleStore.fetchArticle(props.params.id);</span> fetch the desired article by articleID
-from the list which is needed to updated.
+<p>This component is responsible for updating an Article.
+<span class="codeInsidePgrph">ArticleStore.fetchArticle(props.params.id);</span> retrieves the desired article by it's ID
+from the list to be updated.
 </p>
 <p>
   Inside <span class="codeInsidePgrph">handleInputTitle(e) {...}</span>, <span class="codeInsidePgrph">this.state.EditArticle.title = e.target.value;</span>
   takes the input from the user to update the Article Title and
   <span class="codeInsidePgrph">this.setState({EditArticle: this.state.EditArticle});</span>.
-  updates the object every time after changes is being made.
+  updates the object whenever changes are made.
 </p>
 <p>
   The <span class="codeInsidePgrph">handleInputContent(e) {...}</span> does exactly same thing as the
@@ -550,8 +697,8 @@ from the list which is needed to updated.
 <h4>3. View Article Component</h4>
 
 <p>
-  The <b>ViewArticle.jsx</b> component is almost similar with the <b>EditArticle.jsx</b> component,
-  so only the distinguish methods will be discussed in this part,
+  The <b>ViewArticle.jsx</b> component is almost similar with the <b>EditArticle.jsx</b> component, It allows
+  the user to <b>view</b>, <b>delete</b> and <b>edit</b> an article. <b>Delete</b> and <b>edit</b> works only if the user is logged in.
 </p>
 <div class="example-title">ViewArticle.jsx</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -686,10 +833,6 @@ from the list which is needed to updated.
 
 <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> ViewArticle;
 </pre></td></tr></table></div>
-<p>
-  It allows the user to view an article ,delete an article,and provides the link for the edit article.
-Delete and edit Works only, when the user is logged in.
-</p>
 
 <p>
   Inside the <span class="codeInsidePgrph">render(){...} this.state.loggedIn &&</span> shows the Edit & Delete Button if the user logged in.
@@ -702,8 +845,9 @@ Delete and edit Works only, when the user is logged in.
              <h2>Backend for Component</h2>
 
 
-            <p class="l-sub-section">Create a .js file needs to be made in the models folder which is inside the server folder .
-              In this file the schema of the data is defined.</p>
+            <p class="l-sub-section">
+              The <span class="codeInsidePgrph">Article.js</span> contains the article schema using mongoose.
+            </p>
 <div class="example-title">Article.js</div>
               <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
      1
@@ -771,9 +915,7 @@ Delete and edit Works only, when the user is logged in.
 </div>
 
 <p class="l-sub-section">
-  Make a <span class="codeInsidePgrph">server.routes.js</span> file where the backend API routes
-  are written, also the server.controller.js file is imported so its functions can be used.
-  Depending on which route is called from the store, the appropriate function will run and return data if necessary.
+  Backend API routes are written in <span class="codeInsidePgrph">server.routes.js</span>. Depending on the route being called, the appropriate function will be executed.
 </p>
 <div class="example-title">article.server.routes.js</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -821,40 +963,39 @@ app.param(<span style="background-color: #fff0f0">&#39;id&#39;</span>, articles.
 }
 </pre></td></tr></table></div>
 
-<p>The route <span class="codeInsidePgrph">'/api/articles'</span> gets the list of articles and lets a user create an article if the user is logged in.
+<p>The route <span class="codeInsidePgrph">'/api/articles'</span> lets a user create an article if the user is logged in and gets the list of articles.
 </p>
 
-<p>The route <span class="codeInsidePgrph">'/articles/api/articles/:id'</span> gets one article and lets a user delete an article if the user is logged in.</p>
+<p>The route <span class="codeInsidePgrph">'/articles/api/articles/:id'</span> lets a user delete an article if the user is logged in and gets one article.</p>
 
-<p>The route <span class="codeInsidePgrph">'/articles/edit/api/articles/:id'</span> gets one article and lets a user edit an article if the user is logged in.
-</p>
+<p>The route <span class="codeInsidePgrph">'/articles/edit/api/articles/:id'</span> lets a user edit an article if the user is logged in and gets one article.</p>
 
-<p>Whenever <span class="codeInsidePgrph">users.requiresLogin</span> is added to any route, user authentication is needed to access that route.</p>
+<p><span class="codeInsidePgrph">users.requiresLogin</span> is added to any route if user authentication is required to access that route.</p>
 
 <p>Using http <span class="codeInsidePgrph">“put”</span> method and the following url <span class="codeInsidePgrph">/articles/edit/api/articles/569cbefe877baaf001e43b7f'</span>
-you can update the article with the id <b>569cbefe877baaf001e43b7f</b>.
+the article with the id <b>569cbefe877baaf001e43b7f</b> can be updated.
 </p>
 
 <p>Using http <span class="codeInsidePgrph">“get”</span> method and the following url <span class="codeInsidePgrph">'/articles/api/articles/569cbefe877baaf001e43b7f</span>
-you can retrieve the article with the id <b>569cbefe877baaf001e43b7f</b>.
+the article with the id <b>569cbefe877baaf001e43b7f</b> can be retrieved .
 </p>
 
 
 <p>Using http <span class="codeInsidePgrph">“post”</span> method and the following url <span class="codeInsidePgrph">'/api/articles'</span>
-you can create an article.
+an article can be created.
 </p>
 
 <p>Using http <span class="codeInsidePgrph">“delete”</span> method and the following url <span class="codeInsidePgrph">'/articles/api/articles/569cbefe877baaf001e43b7f</span>
-you can delete the article with the id <b>569cbefe877baaf001e43b7f</b>.
+the article with the id <b>569cbefe877baaf001e43b7f</b> can be deleted.
 </p>
 
 
-<p><span class="codeInsidePgrph">app.param</span> gets a single article from the database if the url param contains an id.</p>
+<p><span class="codeInsidePgrph">app.param</span> gets a single article from the database if the url param contains an id parameter.</p>
 
 
-<p class="l-sub-section">Make a <span class="codeInsidePgrph">server.controller.js</span> file in the controllers folder where the CRUD operation functions are defined. </p>
-<p> The file from the models folder needs to be imported to this file in order to save, update and delete data.
- This file provides all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as list, create, etc.</p>
+<p class="l-sub-section">The CRUD operation functions are defined in the <span class="codeInsidePgrph">server.controller.js</span> file. </p>
+<p> The file from the models folder needs to be imported to <span class="codeInsidePgrph">server.controller.js</span> in order to save, update and delete data.
+ <span class="codeInsidePgrph">server.controller.js</span> provides all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as list, create, etc.</p>
 
 <div class="example-title">articles.server.controller.js</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -1062,7 +1203,7 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
       <div>
            <h1>Sign Up Component</h1>
            <p>
-             The <b>Signup.jsx</b> component is all about signing up an user to the the application. This will shows how to signup a user with validation in the front-end.
+             The <b>Signup.jsx</b> component is all about creating a new user to the the application. The following instructions will show how to signup a user with validation in the front-end.
            </p>
 
            <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
@@ -1364,35 +1505,37 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 <span style="color: #008800; font-weight: bold">export</span> <span style="color: #008800; font-weight: bold">default</span> Signup;
 </pre></td></tr></table></div>
 <p>
-  After providing a valid information for the asking field in the signup form this component allows to add an user to the DB. Lets start the coding explanation,
+  After providing all the valid information for the required fields in the signup form, this component allows a user to be added to the DB. Lets start the coding explanation,
 </p>
 
 <p>
-  <span class="codeInsidePgrph">handleInputFirstName(e){...}, handleInputLastName(e){...}, handleInputUserName(e){...}</span> does exactly same thing. So <span class="codeInsidePgrph">handleInputFirstName(e){...}</span> will be described to make understand these three methods. <span class="codeInsidePgrph">this.validFirstName= e.target.value!=="" ? true : false;</span> this itinerary condition checks whether the First Name field is empty or not. If the field is empty,
+  <span class="codeInsidePgrph">handleInputFirstName(e){...}, handleInputLastName(e){...}, handleInputUserName(e){...}</span> does exactly the same thing.
+  So <span class="codeInsidePgrph">handleInputFirstName(e){...}</span> will be described in order to understand these three methods.
+   <span class="codeInsidePgrph">this.validFirstName= e.target.value!=="" ? true : false;</span> this itinerary condition checks whether the First Name field is empty or not. If the field is empty,
 </p>
 <p>
-  <span class="codeInsidePgrph">this.setState({error:''});</span> will show an error message to the user during form submit.
+  <span class="codeInsidePgrph">this.setState({error:''});</span> will show an error message to the user after the form submit button is pressed.
 
 <span class="codeInsidePgrph">this.state.userInfo.firstName = e.target.value;</span> this line of code takes the First Name as input from the user.
 
 <span class="codeInsidePgrph">this.setState({userInfo: this.state.userInfo});</span> updates the <span class="codeInsidePgrph">userInfo{}</span> with the first name.
 
-The <span class="codeInsidePgrph">handleInputEmail(e){...}</span> and <span class="codeInsidePgrph">handleInputPassword(e){...}</span> does pretty same thing,
+The <span class="codeInsidePgrph">handleInputEmail(e){...}</span> and <span class="codeInsidePgrph">handleInputPassword(e){...}</span> does pretty much the same thing,
 
-<span class="codeInsidePgrph">this.validEmail= this.validateEmail(e.target.value)</span> gets the valid/invalid email using the <span class="codeInsidePgrph">validateEmail(email){...}</span> method and response accordingly.
+<span class="codeInsidePgrph">this.validEmail= this.validateEmail(e.target.value)</span> gets the valid/invalid email using the <span class="codeInsidePgrph">validateEmail(email){...}</span> method and responds accordingly.
 
-<span class="codeInsidePgrph">validateEmail(email){...}</span> return the output whether the given email address is valid or not using the regex expression.
+<span class="codeInsidePgrph">validateEmail(email){...}</span> returns a boolean whether the given email address is valid or not using the regex expression.
 
 Finally, <span class="codeInsidePgrph">formSubmit(e){...}</span>
-adds new user by calling auth.signup(newUser);  using the <b>authentication.js</b> service.
-if the user provides invalid information, error messages are shown.
+adds a new user by calling auth.signup(newUser);  using the <b>authentication.js</b> service.
+If the user provides invalid information, error messages are shown.
 </p>
 <h4>Authentication.js</h4>
 
-<span class="codeInsidePgrph">signup(userInfo){...}</span> creates a user.
-<span class="codeInsidePgrph">login(email, pass, cb) {...}</span> signs in user using email and password.
-<span class="codeInsidePgrph">logout(cb){...}</span> signs out user.
-<span class="codeInsidePgrph">loggedIn(){...}</span> checks whether the user is signed in or not.
+<p><span class="codeInsidePgrph">signup(userInfo){...}</span> creates a user.</p>
+<p><span class="codeInsidePgrph">login(email, pass, cb) {...}</span> signs in a user using their email and password.</p>
+<p><span class="codeInsidePgrph">logout(cb){...}</span> signs out the user.</p>
+<p><span class="codeInsidePgrph">loggedIn(){...}</span> checks whether the user is signed in or not.</p>
 
 <p>
 For authentication purposes, developers can either use the backend session and send it to the
@@ -1403,7 +1546,7 @@ front-end cookie or use the token system that is stored in the front end.
                   <!-- /*********************** new signup backend **********************/ -->
 <div>
 
-<p class="l-sub-section">Create a .js file needs to be made in the models folder which is inside the server folder. In this file the schema of the data is defined.</p>
+<p class="l-sub-section"><span class="codeInsidePgrph">User.js</span> file contains the schema of the user</p>
 <div class="example-title">User.js</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
   2
@@ -1694,8 +1837,7 @@ UserSchema.methods.authenticate <span style="color: #333333">=</span> <span styl
 module.exports <span style="color: #333333">=</span> User;
 </pre></td></tr></table></div>
 
-<p class="l-sub-section">Make a server.routes.js file where the backend API routes are written, also the server.controller.js file is imported so its functions can be used.</p>
-<p>Depending on which route is called from the store, the appropriate function will run and return data if necessary.</p>
+<p class="l-sub-section">The backend API routes are written in the <span class="codeInsidePgrph">server.routes.js</span> file. Depending on the API route being called the respective function will be executed.</p>
 <div class="example-title">users.server.routes.js</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
@@ -1748,18 +1890,18 @@ module.exports <span style="color: #333333">=</span> <span style="color: #008800
 };
 </pre></td></tr></table></div>
 
-<p>The route <span class="codeInsidePgrph">'/auth/signup'</span> helps a user get signup and get signed in.</p>
+<p>The route <span class="codeInsidePgrph">'/auth/signup'</span> signs up a user and then signs the user in.</p>
 
-<p>The route <span class="codeInsidePgrph">'/auth/signin'</span> helps a user get signed in.</p>
+<p>The route <span class="codeInsidePgrph">'/auth/signin'</span> signs in a user.</p>
 
-<p>The route <span class="codeInsidePgrph">'/auth/signout'</span> helps a user signout.</p>
-
-
-<p><span class="codeInsidePgrph">app.param</span> gets a single user from the database if the url param contains an id.</p>
+<p>The route <span class="codeInsidePgrph">'/auth/signout'</span> signs out a user.</p>
 
 
-<p class="l-sub-section">Make a <span class="codeInsidePgrph">users.server.controller.js</span> file in the controllers folder where the all the user related controllers are
-  required. This file gives access all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as signin, signout, etc.</p>
+<p><span class="codeInsidePgrph">app.param</span> gets a single user from the database if the url param contains an id parameter.</p>
+
+
+<p class="l-sub-section">All the user related controllers are
+  'require' in the <span class="codeInsidePgrph">users.server.controller.js</span> file in the controllers folder.<span class="codeInsidePgrph">users.server.controller.js</span> gives access to all the functions that the <span class="codeInsidePgrph">server.routes.js</span> uses such as signin, signout, etc.</p>
 
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
@@ -1784,7 +1926,7 @@ module.exports <span style="color: #333333">=</span> _.extend(
 );
 </pre></td></tr></table></div>
 
-<p class="l-sub-section">In the controllers folder, inside the user folder are files that are mentioned above. Using the functions in
+<p class="l-sub-section">The user folder inside the controllers folder contain all the files mentioned above in the code snippet. Using the functions in
   <span class="codeInsidePgrph">users.authentication.server.controller</span> we signin, signout and signup.</p>
 <div class="example-title">users.authentication.server.controller</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">
@@ -1959,138 +2101,19 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 </div>
                 <!-- /*********************** new signup backend end **********************/ -->
 
-<div>
-          <h1>Architecture & Data Flow</h1>
-          <p>The application architecture used on the client-side for data flow between the React components and the
-            backend is a stripped down version inspired by Facebook’s Flux architecture, and has two main parts
-            - <b>stores</b> and <b>views.</b>
-          </p>
-          <h2>Flow of Data</h2>
-          <p>Let’s start with the Article list view component from the framework. In order to get the list of articles
-            from the backend and load in the view, first <span class="codeInsidePgrph">ArticleStore.fetchArticleList()</span> function is called when the
-            component is initialized.
-          </p>
 
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">class</span> ArticleList <span style="color: #008800; font-weight: bold">extends</span> React.Component {
-  constructor(props, context){
-    ...
-    ArticleStore.fetchArticleList();
-    ...
-      }
-    ...
-  }
-
-<b>FIG</b><span style="color: #333333">:</span> Article List Component
-</pre></td></tr></table></div>
-
-          <p>The <span class="codeInsidePgrph">fetchArticleList()</span> in the <b>ArticleStore.jsx</b> makes an ajax <b>GET</b> call in order to get the data from
-            the database using the appropriate <b>API</b> call.
-          </p>
-        </br>
-          <li>
-            <b>
-            So when this article list data returns successfully, how is this data rendered in the article list view?
-            </b>
-          </li>
-
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5</pre></td><td><pre style="margin: 0; line-height: 125%">
-_onChange() {
-  <span style="color: #008800; font-weight: bold">this</span>.setState(getArticleList());
-  }
-
-<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> view
-</pre></td></tr></table></div>
-
-          <p>
-            The <span class="codeInsidePgrph">_onChange(){...}</span> function in the view is registered in the store
-            as a callback function to be called when the data is available.
-          </p>
-
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5</pre></td><td><pre style="margin: 0; line-height: 125%">componentWillMount() {
-    ArticleStore.onChange(<span style="color: #008800; font-weight: bold">this</span>._onChange);
-  }
-
-<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> being registered
-</pre></td></tr></table></div>
-</br>
-
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> onChange(listener) {
-    changeListeners.push(listener);
-  }
-
-<b>FIG</b><span style="color: #333333">:</span> onChange <span style="color: #008800; font-weight: bold">function</span> <span style="color: #008800; font-weight: bold">in</span> store
-</pre></td></tr></table></div>
-
-Listeners being pushed to a changeListener array which is used below, The <span class="codeInsidePgrph">triggerListeners(){...}</span> function is called
-when the data is successfully fetched so the registered changeListeners are run.
-</p>
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5
-6
-7</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> triggerListeners() {
-    changeListeners.forEach(<span style="color: #008800; font-weight: bold">function</span>(listener) {
-      listener();
-    })
-  };
-
-<b>FIG</b><span style="color: #333333">:</span> Running each registered listener <span style="color: #008800; font-weight: bold">function</span>
-</pre></td></tr></table></div>
-
-<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto; background-color: #f5f5f5; border:1px solid #ccc;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5
-6
-7
-8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
-    get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
-      articleList <span style="color: #333333">=</span> data;
-      triggerListeners();
-    });
-  }
-
-<b>FIG</b><span style="color: #333333">:</span> fetchArticleList() calls the triggerListeners() when data is retrieved
-</pre></td></tr></table></div>
-</div>
-
-<h2>Data Flow Model</h2>
-       <img style="max-width: 100%;" src="images/image00.png"/>
-               </div>
+    </div>
+      </div>
       <!-- /*********************** Col 9 Div Ends) **********************/ -->
     </div>
     <!-- /.row -->
   </div>
   <!-- /.container -->
 
-  <!-- jQuery Version 1.11.1 -->
-  <script src="js/jquery.js"></script>
+        <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

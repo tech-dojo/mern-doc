@@ -29,7 +29,6 @@
     max-width: 50%;
 }
 
-<<<<<<< HEAD
 .l-sub-section {
     /* margin: 0 0 32px 0; */
      padding: 0 3em;
@@ -65,7 +64,6 @@
 /*p {
       font-size: 16px;
 }*/
-=======
 .codeExmp{
   white-space: pre-line;
   font-family: Consolas, monaco, monospace;
@@ -76,4 +74,7 @@
     padding: 1em 3em;
     max-width: 50%;
 }
->>>>>>> c930dbbc2dbf956b6f5b7a11e3f687bc4858bff4
+
+.hashLink {
+  margin-top: 30px;
+}
