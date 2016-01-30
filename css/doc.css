@@ -1,7 +1,51 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+.marginBottom{
+  margin-bottom: 80px;
+}
+.header_color{
+  color:#626262;
+}
+.compImg{
+  max-height: 50px;
+  padding: 0 20px;
+}
+.expressLogo{
+  max-height: 30px;
+  margin-top: 20px;
+}
+/*Header*/
+.menuIcon{
+  font-size: 1.9em;
+  color: #ECECEC;
+}
+.navbar-brand{
+  padding: 9px 15px;
+}
+.navbar-brand img{
+  height: 40px;
+  display: inline-block;
+}
+.navbar-brand span{
+  display: inline-block;
+  vertical-align: sub;
+  padding-left: 12px;
+  color: #AAAAAA;
+      font-size: 0.9em;
+}
+.callToAction a{
+  margin: 7px 1px;
+}
+/*Documentation*/
 .menuCss{
-
-  position: fixed;
   margin-left: 50px;
+}
+@media (min-width: 768px) {
+  .menuCss{
+    position: fixed;
+  }
 }
 
 .example-title {
@@ -26,7 +70,7 @@
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 0 3em;
-    max-width: 50%;
+    max-width: 1000px;
 }
 
 .l-sub-section {
@@ -104,4 +148,19 @@ p {
     background-color: #D2CBCB;
     padding: 5px 5px;
     border-radius: 3px;
+}
+/*Footer*/
+.footer {
+ 	  background-color: #222;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 4000;
+    color: #9d9d9d;
+    padding:15px 2px;
+    text-align:center;
+}
+.footer a{
+	color:#F1F1F1;
+
 }

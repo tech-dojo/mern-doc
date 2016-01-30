@@ -13,6 +13,7 @@
 
   <!-- Bootstrap Core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="css/doc.css" rel="stylesheet">
 
   <!-- Custom CSS -->
@@ -44,13 +45,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="./index.html">Tech Dojo React Framework</a>
+        <a class="navbar-brand" href="./index.html"><img className="brand_logo" src="./images/mern.png"/>  <span>A React framework</span></a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav pull-right">
           <li>
-            <a href="./doc.html">DOC</a>
+              <a href="./doc.html"><i class="fa fa-github-square menuIcon"></i></a>
+          </li>
+          <li>
+            <a href="./doc.html"><i class="fa fa-twitter-square menuIcon"></i></a>
           </li>
 
         </ul>
@@ -62,9 +66,9 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container-fluid">
+  <div class="container marginBottom">
     <div class="row">
-      <div class="col-lg-2 col-md-2 col-sm-2 ">
+      <div class="col-lg-3 col-md-4 col-sm-5 col-xs-12">
         <nav>
           <ul class="nav nav-pills nav-stacked menuCss">
             <li>
@@ -101,8 +105,8 @@
 
       </div>
 
-      <div id="gettingStarted" class="col-lg-1 col-md-1 col-sm-1"></div>
-      <div class="col-lg-9 col-md-9 col-sm-9">
+      <span id="gettingStarted"></span>
+      <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12">
         <div>
           <h1>Getting Started</h1>
           <hr>
@@ -2127,6 +2131,10 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
     <!-- /.row -->
   </div>
   <!-- /.container -->
+  <div class="footer">
+            Licensed under MIT &copy; 2016 | <a href="http://tech-dojo.org">TechDojo
+
+  </div>
 
         <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
