@@ -40,7 +40,11 @@ html {
 .callToAction a {
   margin: 7px 1px;
 }
-
+.description{
+  font-weight: 200;
+  color: #7D7D7D;
+  margin-bottom: 25px;
+}
 /*Documentation*/
 
 .menuCss {
