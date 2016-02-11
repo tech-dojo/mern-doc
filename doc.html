@@ -219,6 +219,7 @@
 |------models
 |------routes
 |------strategies
+|------tests
 |------express.js
 |------passport.js
 |------seeds.js
@@ -2139,7 +2140,37 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 </br>
 <h1 id="testCode">Test Code</h1>
 <hr>
-<h4 style ="color: #777; text-align: center; font-size: 40px">Coming Soon</h4>
+<p>
+  Mocha is used to test the server side logic. Mocha tests are asynchronous, easy to maintain, and uses a readable Behavior-driven development(BDD) syntax.
+</p>
+
+<h4>Assertions</h4>
+
+<p>
+  Mocha needs an external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">Should.js</span> is being used. <b>Should</b> is an expressive library aiming to simplify tests and be readable. It extends the <span class="codeInsidePgrph">Object.prototype</span> with a single non-enumerable getter that allows you to express how that object should behave.
+</p>
+<h4>Test Files</h4>
+<p>
+Each entity have its own test file located inside the app/tests folder.
+</p>
+<h4>Writing Tests</h4>
+
+<p><u><b>There are a few common steps is used to test an entity:</b></u></p>
+<p>
+1. The beforeEach or before functions take care of prerequisites and create the objects that are about to use in the tests.
+</p>
+<p>
+2. For each test start with a describe function to indicate which method is being tested.
+</p>
+<p>
+3. Next, the tests using the it function.
+</p>
+<p>
+4. In the it function run the tests functionality and use should to assert what the end result should be.
+</p>
+<p>
+5. Finally use after or afterEach functions to finalize the tests and clear the test database.
+</p>
 </div>
     </div>
 
