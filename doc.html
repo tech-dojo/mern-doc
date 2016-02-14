@@ -124,6 +124,9 @@
             </ul>
             </li>
             <li>
+              <a href="#config">Configuration</a>
+            </li>
+            <li>
               <a href="#isomorphic">Isomorphic</a>
             </li>
           </ul>
@@ -2157,7 +2160,7 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 <h4>Assertions</h4>
 
 <p>
-  Mocha needs an external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">Should.js</span> is being used. <b>Should</b> is an expressive library aiming to simplify tests and be readable. It extends the <span class="codeInsidePgrph">Object.prototype</span> with a single non-enumerable getter that allows you to express how that object should behave.
+  Mocha needs an external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">Should.js</span> is being used. <b>Should</b> is an expressive library aiming to simplify tests and also be readable. It extends the <span class="codeInsidePgrph">Object.prototype</span> with a single non-enumerable getter that allows you to express how that object should behave.
 </p>
 <h4>Test Files</h4>
 <p class="l-sub-section">
@@ -2250,26 +2253,59 @@ describe(<span style="background-color: #fff0f0">&#39;Method Save&#39;</span>, <
 </pre></td></tr></table></div>
 <h4>Writing Tests</h4>
 
-<p><u><b>There are a few common steps is used to test an entity:</b></u></p>
+<p><u><b>There are a few common steps that are used to test an entity:</b></u></p>
 <p>
-1. The beforeEach or before functions take care of prerequisites and create the objects that are about to use in the tests.
+1. The beforeEach or before functions take care of prerequisites and create the objects that are about to be used in the tests.
 </p>
 <p>
-2. For each test start with a describe function to indicate which method is being tested.
+2. For each test start with a "describe" function to indicate which method is being tested.
 </p>
 <p>
-3. Next, the tests using the it function.
+3. Next, the tests using the "it" function.
 </p>
 <p>
-4. In the it function run the tests functionality and use should to assert what the end result should be.
+4. In the "it" function run the tests functionality and use "should" to assert what the end result should be.
 </p>
 <p>
 5. Finally use after or afterEach functions to finalize the tests and clear the test database.
 </p>
 </br>
-<h2 id="clientSidetestCode">Client Side</h2>
-<h5 style ="color: #777; font-size: 24px">Coming Soon</h5>
+<h2  id="clientSidetestCode">Client Side</h2>
+<h5 id="config" style ="color: #777; font-size: 24px">Coming Soon</h5>
 </br>
+</div>
+<div>
+<h1>Configuration</h1>
+<hr>
+
+<h2>Environmental Configuration</h2>
+<p>
+The config file functions as loader for the configurations files placed in the config/env folder, it will load the right configuration file based on the NODE_ENV variable.
+</p>
+<p>
+There are five default configuration files based on common development pattern:</p>
+<p>
+config/env/all.js
+</br>
+This file will be loaded in all the environments, and contains the default properties that will be overwritten by any environment specified configuration.
+</p>
+<p>
+config/env/development.js
+</br>
+This file will be loaded in a development environment, a property defined here will overwrite the one defined in the all.js file</p>
+<p>
+config/env/production.js
+</br>
+This file will be loaded in a production environment, a property defined here will overwrite the one defined in the all.js file.
+</p>
+<p>
+config/env/test.js
+</br>
+This file will be loaded in a test environment, a property defined here will overwrite the one defined in the all.js file.</p>
+</br>
+</div>
+<!-- /*********************** Configuration Ends) **********************/ -->
+<div>
 <h1 id="isomorphic">Isomorphic</h1>
 <hr>
 <h4 style ="color: #777; font-size: 24px">Coming Soon</h4>
