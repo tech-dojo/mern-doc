@@ -2303,6 +2303,28 @@ config/env/test.js
 </br>
 This file will be loaded in a test environment, a property defined here will overwrite the one defined in the all.js file.</p>
 </br>
+<p>
+To run your application with a different environment configuration run the application like this:</p>
+<p class="l-sub-section">gulp serve --THE_Environment_Name</p>
+</br>
+<h2>Configuration Properties</h2>
+
+<p>MERN comes with a default set of configuration properties you will most likely expand with your properties. Here's the review of all the required properties used in the configuration files:
+</p>
+
+<p>
+config.db
+</br>
+This is the MongoDB connection string URI, when bootstrapped, the application will try to connect to the database using this URI, so make sure its the correct one in each environment.
+</p>
+<p>
+config.port
+</br>
+The port used by the application, default is 3000, but as you can notice in the test.js config file, this can be changed.</p>
+
+
+
+
 </div>
 <!-- /*********************** Configuration Ends) **********************/ -->
 <div>
