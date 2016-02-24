@@ -2278,34 +2278,34 @@ describe(<span style="background-color: #fff0f0">&#39;Method Save&#39;</span>, <
 <h1>Configuration</h1>
 <hr>
 
-<h2>Environmental Configuration</h2>
+<h2>Environment Configuration</h2>
 <p>
-The config file functions as loader for the configurations files placed in the config/env folder, it will load the right configuration file based on the NODE_ENV variable.
+The config file loads the configurations placed in the config/env folder, based on the NODE_ENV variable.
 </p>
 <p>
-There are five default configuration files based on common development pattern:</p>
+There are five default configuration files based on common development patterns:</p>
 <p>
-config/env/all.js
+<strong>config/env/all.js</strong>
 </br>
 This file will be loaded in all the environments, and contains the default properties that will be overwritten by any environment specified configuration.
 </p>
 <p>
-config/env/development.js
+<strong>config/env/development.js</strong>
 </br>
 This file will be loaded in a development environment, a property defined here will overwrite the one defined in the all.js file</p>
 <p>
-config/env/production.js
+<strong>config/env/production.js</strong>
 </br>
 This file will be loaded in a production environment, a property defined here will overwrite the one defined in the all.js file.
 </p>
 <p>
-config/env/test.js
+<strong>config/env/test.js</strong>
 </br>
 This file will be loaded in a test environment, a property defined here will overwrite the one defined in the all.js file.</p>
 </br>
 <p>
 To run your application with a different environment configuration run the application like this:</p>
-<p class="l-sub-section">gulp serve --THE_Environment_Name</p>
+<p class="l-sub-section">gulp serve --<em>The_Environment_Name</em></p>
 </br>
 <h2>Configuration Properties</h2>
 
@@ -2313,12 +2313,12 @@ To run your application with a different environment configuration run the appli
 </p>
 
 <p>
-config.db
+<strong>config.db</strong>
 </br>
 This is the MongoDB connection string URI, when bootstrapped, the application will try to connect to the database using this URI, so make sure its the correct one in each environment.
 </p>
 <p>
-config.port
+<strong>config.port</strong>
 </br>
 The port used by the application, default is 3000, but as you can notice in the test.js config file, this can be changed.</p>
 
