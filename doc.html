@@ -259,7 +259,7 @@
         <span class="fileName-title">Index.ejs</span>
 
         <p>The react app gets mounted using,
-          <!-- HTML generated using hilite.me --><div class="common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
+          <!-- HTML generated using hilite.me --><div class="common-margin-bottom" style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span>&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
    <span style="color: #007700">&lt;/div&gt;</span>
 </pre></div>
           </p>
@@ -267,7 +267,7 @@
         <span class="fileName-title ">Main.jsx</span>
 
         <p><span class="codeInsidePgrph">ReactDom</span> mounts the app component using,
-          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">ReactDom.render(<span style="color: #333333">&lt;</span>App<span style="color: #333333">/&gt;</span>,<span style="color: #007020">document</span>.getElementById(<span style="background-color: #fff0f0">&#39;mount&#39;</span>));
+          <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">ReactDom.render(<span style="color: #333333">&lt;</span>App<span style="color: #333333">/&gt;</span>,<span style="color: #007020">document</span>.getElementById(<span>&#39;mount&#39;</span>));
           </pre></div>
         </p>
 
@@ -348,11 +348,11 @@
 5
 6
 7
-8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;Router</span> <span style="color: #0000CC">history=</span><span style="background-color: #fff0f0">{history}</span><span style="color: #007700">&gt;</span>
-      <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span style="background-color: #fff0f0">&quot;/&quot;</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{Template}</span><span style="color: #007700">&gt;</span>
-        <span style="color: #007700">&lt;IndexRoute</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{Home}/</span><span style="color: #007700">&gt;</span>
+8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #007700">&lt;Router</span> <span style="color: #0000CC">history=</span><span>{history}</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span>&quot;/&quot;</span> <span style="color: #0000CC">component=</span><span>{Template}</span><span style="color: #007700">&gt;</span>
+        <span style="color: #007700">&lt;IndexRoute</span> <span style="color: #0000CC">component=</span><span>{Home}/</span><span style="color: #007700">&gt;</span>
         ..............
-        <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span style="background-color: #fff0f0">&quot;/articles&quot;</span> <span style="color: #0000CC">component=</span><span style="background-color: #fff0f0">{ListArticles}/</span><span style="color: #007700">&gt;</span>
+        <span style="color: #007700">&lt;Route</span> <span style="color: #0000CC">path=</span><span>&quot;/articles&quot;</span> <span style="color: #0000CC">component=</span><span>{ListArticles}/</span><span style="color: #007700">&gt;</span>
         ..............
       <span style="color: #007700">&lt;/Route&gt;</span>
     <span style="color: #007700">&lt;/Router&gt;</span>
@@ -459,7 +459,7 @@ _onChange() {
 6
 7
 8</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">function</span> fetchArticleList() {
-    get(<span style="background-color: #fff0f0">&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
+    get(<span>&quot;/api/articles&quot;</span>).then((data) <span style="color: #333333">=&gt;</span> {
       articleList <span style="color: #333333">=</span> data;
       triggerListeners();
     });
@@ -534,9 +534,9 @@ _onChange() {
 49
 50
 51
-52</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>
+52</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span>&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span>&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span>&#39;react-bootstrap&#39;</span>
 
 <span style="color: #008800; font-weight: bold">class</span> CreateArticle <span style="color: #008800; font-weight: bold">extends</span> React.Component {
   constructor(props) {
@@ -544,7 +544,7 @@ _onChange() {
     <span style="color: #008800; font-weight: bold">this</span>.history <span style="color: #333333">=</span> props.history;
     <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
     <span style="color: #008800; font-weight: bold">this</span>.state.CreateArticle <span style="color: #333333">=</span> {};
-    <span style="color: #008800; font-weight: bold">this</span>.state.error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.state.error <span style="color: #333333">=</span> <span>&#39;&#39;</span>;
 
     <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputTitle.bind(<span style="color: #008800; font-weight: bold">this</span>);
     <span style="color: #008800; font-weight: bold">this</span>.handleInputContent <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputContent.bind(<span style="color: #008800; font-weight: bold">this</span>);
@@ -571,16 +571,16 @@ _onChange() {
         <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
           <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
             <span style="color: #333333">&lt;</span>h2<span style="color: #333333">&gt;</span>
-              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Create Article<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/b&gt;</span>
-            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h2&gt;</span>
+              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Create Article<span style="color: #333333">&lt;</span><span>/b&gt;</span>
+            <span style="color: #333333">&lt;</span><span>/h2&gt;</span>
             <span style="color: #333333">&lt;</span>form onSubmit<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>._formSubmit}<span style="color: #333333">&gt;</span>
-              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
-              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;textarea&quot;</span> label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
-              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
-            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/form&gt;</span>
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
-        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
-      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span>&quot;text&quot;</span> label<span style="color: #333333">=</span><span>&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span>&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span>&quot;textarea&quot;</span> label<span style="color: #333333">=</span><span>&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span>&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span>&quot;submit&quot;</span> value<span style="color: #333333">=</span><span>&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span>&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
+            <span style="color: #333333">&lt;</span><span>/form&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
+        <span style="color: #333333">&lt;</span><span>/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span>/Grid&gt;</span>
     )
   }
 }
@@ -666,9 +666,9 @@ _onChange() {
 65
 66
 67
-68</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>
+68</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span>&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span>&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Button, Input, ButtonInput} from <span>&#39;react-bootstrap&#39;</span>
 
 <span style="color: #008800; font-weight: bold">function</span> getArticle() {
     <span style="color: #008800; font-weight: bold">return</span> {EditArticle<span style="color: #333333">:</span> ArticleStore.getArticle()}
@@ -719,16 +719,16 @@ _onChange() {
         <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
           <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
             <span style="color: #333333">&lt;</span>h2<span style="color: #333333">&gt;</span>
-              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Edit Article<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/b&gt;</span>
-            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h2&gt;</span>
+              <span style="color: #333333">&lt;</span>b<span style="color: #333333">&gt;</span>Edit Article<span style="color: #333333">&lt;</span><span>/b&gt;</span>
+            <span style="color: #333333">&lt;</span><span>/h2&gt;</span>
             <span style="color: #333333">&lt;</span>form onSubmit<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>._formSubmit}<span style="color: #333333">&gt;</span>
-              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> value<span style="color: #333333">=</span>{article.title} label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
-              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;textarea&quot;</span> value<span style="color: #333333">=</span>{article.content} label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
-              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;submit&quot;</span> value<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
-            <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/form&gt;</span>
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
-        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
-      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span>&quot;text&quot;</span> value<span style="color: #333333">=</span>{article.title} label<span style="color: #333333">=</span><span>&quot;Title&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputTitle} placeholder<span style="color: #333333">=</span><span>&quot;Enter Article Title&quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>Input type<span style="color: #333333">=</span><span>&quot;textarea&quot;</span> value<span style="color: #333333">=</span>{article.content} label<span style="color: #333333">=</span><span>&quot;Article Content&quot;</span> onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputContent} placeholder<span style="color: #333333">=</span><span>&quot;Article Content: &quot;</span><span style="color: #333333">/&gt;</span>
+              <span style="color: #333333">&lt;</span>ButtonInput type<span style="color: #333333">=</span><span>&quot;submit&quot;</span> value<span style="color: #333333">=</span><span>&quot;Submit Button&quot;</span> bsStyle<span style="color: #333333">=</span><span>&quot;primary&quot;</span><span style="color: #333333">/&gt;</span>
+            <span style="color: #333333">&lt;</span><span>/form&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
+        <span style="color: #333333">&lt;</span><span>/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span>/Grid&gt;</span>
     )
   }
 }
@@ -822,12 +822,12 @@ from the list to be updated.
 62
 63
 64
-65</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> { Link } from <span style="background-color: #fff0f0">&#39;react-router&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span style="background-color: #fff0f0">&#39;./../../stores/ArticleStore.jsx&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span style="background-color: #fff0f0">&#39;react-router-bootstrap&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> auth from <span style="background-color: #fff0f0">&#39;./../../services/Authentication&#39;</span>;
+65</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span>&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> { Link } from <span>&#39;react-router&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> ArticleStore from <span>&#39;./../../stores/ArticleStore.jsx&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label} from <span>&#39;react-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span>&#39;react-router-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> auth from <span>&#39;./../../services/Authentication&#39;</span>;
 
 <span style="color: #008800; font-weight: bold">function</span> getArticle() {
     <span style="color: #008800; font-weight: bold">return</span> {article<span style="color: #333333">:</span> ArticleStore.getArticle()}
@@ -867,21 +867,21 @@ from the list to be updated.
         <span style="color: #333333">&lt;</span>Grid<span style="color: #333333">&gt;</span>
           <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
         <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
-          <span style="color: #333333">&lt;</span>h1<span style="color: #333333">&gt;</span>{article.title}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h1&gt;</span>
-          <span style="color: #333333">&lt;</span>hr<span style="color: #333333">&gt;&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/hr&gt;</span>
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+          <span style="color: #333333">&lt;</span>h1<span style="color: #333333">&gt;</span>{article.title}<span style="color: #333333">&lt;</span><span>/h1&gt;</span>
+          <span style="color: #333333">&lt;</span>hr<span style="color: #333333">&gt;&lt;</span><span>/hr&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
           <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">8</span>}<span style="color: #333333">&gt;</span>
-          <span style="color: #333333">&lt;</span>h3<span style="color: #333333">&gt;</span>{article.content}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h3&gt;</span>
-        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
+          <span style="color: #333333">&lt;</span>h3<span style="color: #333333">&gt;</span>{article.content}<span style="color: #333333">&lt;</span><span>/h3&gt;</span>
+        <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
         <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} lg<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} sm<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>} xs<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">4</span>}<span style="color: #333333">&gt;</span>
-          {<span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">&lt;</span>div className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;pull-right&quot;</span><span style="color: #333333">&gt;</span>
-            <span style="color: #333333">&lt;</span>LinkContainer className<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;editBtnCSS&quot;</span> to<span style="color: #333333">=</span>{<span style="color: #FF0000; background-color: #FFAAAA">`</span><span style="color: #333333">/</span>articles<span style="color: #333333">/</span>edit<span style="color: #333333">/</span>${article._id}<span style="color: #FF0000; background-color: #FFAAAA">`</span>}<span style="color: #333333">&gt;&lt;</span>Button  bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">&gt;</span>Edit<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;&lt;/LinkContainer&gt;</span>
-            <span style="color: #333333">&lt;</span>Button onClick<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.deleteArticle} bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;danger&quot;</span><span style="color: #333333">&gt;</span>Delete<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt;</span>
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/div&gt;</span>
+          {<span style="color: #008800; font-weight: bold">this</span>.state.loggedIn <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">&lt;</span>div className<span style="color: #333333">=</span><span>&quot;pull-right&quot;</span><span style="color: #333333">&gt;</span>
+            <span style="color: #333333">&lt;</span>LinkContainer className<span style="color: #333333">=</span><span>&quot;editBtnCSS&quot;</span> to<span style="color: #333333">=</span>{<span>`</span><span style="color: #333333">/</span>articles<span style="color: #333333">/</span>edit<span style="color: #333333">/</span>${article._id}<span>`</span>}<span style="color: #333333">&gt;&lt;</span>Button  bsStyle<span style="color: #333333">=</span><span>&quot;primary&quot;</span><span style="color: #333333">&gt;</span>Edit<span style="color: #333333">&lt;</span><span>/Button&gt;&lt;/LinkContainer&gt;</span>
+            <span style="color: #333333">&lt;</span>Button onClick<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.deleteArticle} bsStyle<span style="color: #333333">=</span><span>&quot;danger&quot;</span><span style="color: #333333">&gt;</span>Delete<span style="color: #333333">&lt;</span><span>/Button&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/div&gt;</span>
           }
-      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
-         <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
-      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+      <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
+         <span style="color: #333333">&lt;</span><span>/Row&gt;</span>
+      <span style="color: #333333">&lt;</span><span>/Grid&gt;</span>
       )
     }
 }
@@ -934,25 +934,25 @@ from the list to be updated.
     27
     28
     29
-    30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>);
+    30</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span>&#39;mongoose&#39;</span>);
     <span style="color: #008800; font-weight: bold">var</span> Schema <span style="color: #333333">=</span> mongoose.Schema;
     <span style="color: #008800; font-weight: bold">var</span> ArticleSchema <span style="color: #333333">=</span> {
 
       title<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
       },
 
       content<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
       },
 
       user<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> Schema.ObjectId,
-        ref<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;User&#39;</span>
+        ref<span style="color: #333333">:</span> <span>&#39;User&#39;</span>
       },
 
       created<span style="color: #333333">:</span> {
@@ -961,7 +961,7 @@ from the list to be updated.
       }
     }
 
-    <span style="color: #008800; font-weight: bold">var</span> Article <span style="color: #333333">=</span> mongoose.model(<span style="background-color: #fff0f0">&#39;Article&#39;</span>, ArticleSchema, <span style="background-color: #fff0f0">&#39;articles&#39;</span>);
+    <span style="color: #008800; font-weight: bold">var</span> Article <span style="color: #333333">=</span> mongoose.model(<span>&#39;Article&#39;</span>, ArticleSchema, <span>&#39;articles&#39;</span>);
     module.exports <span style="color: #333333">=</span> Article;
   </pre></td></tr></table>
 
@@ -994,23 +994,23 @@ from the list to be updated.
 21
 22</pre></td><td><pre style="margin: 0; line-height: 125%">module.exports <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(app){
 
- <span style="color: #008800; font-weight: bold">var</span> articles <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../controllers/articles.server.controller.js&#39;</span>);
- <span style="color: #008800; font-weight: bold">var</span> users <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../controllers/users.server.controller.js&#39;</span>);
+ <span style="color: #008800; font-weight: bold">var</span> articles <span style="color: #333333">=</span> require(<span>&#39;./../controllers/articles.server.controller.js&#39;</span>);
+ <span style="color: #008800; font-weight: bold">var</span> users <span style="color: #333333">=</span> require(<span>&#39;./../controllers/users.server.controller.js&#39;</span>);
 
- app.route(<span style="background-color: #fff0f0">&#39;/api/articles&#39;</span>)
+ app.route(<span>&#39;/api/articles&#39;</span>)
 	.get(articles.list)
 	.post(users.requiresLogin, articles.create);
 
-  app.route(<span style="background-color: #fff0f0">&#39;/articles/api/articles/:id&#39;</span>)
+  app.route(<span>&#39;/articles/api/articles/:id&#39;</span>)
 	.get(articles.read)
   .<span style="color: #008800; font-weight: bold">delete</span>(users.requiresLogin, articles.<span style="color: #008800; font-weight: bold">delete</span>);
 
-	app.route(<span style="background-color: #fff0f0">&#39;/articles/edit/api/articles/:id&#39;</span>)
+	app.route(<span>&#39;/articles/edit/api/articles/:id&#39;</span>)
 	.get(articles.read)
 	.put(users.requiresLogin, articles.update);
 
 
-app.param(<span style="background-color: #fff0f0">&#39;id&#39;</span>, articles.articleByID);
+app.param(<span>&#39;id&#39;</span>, articles.articleByID);
 
 
 }
@@ -1113,9 +1113,9 @@ the article with the id <b>569cbefe877baaf001e43b7f</b> can be deleted.
 60
 61
 62
-63</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>);
-<span style="color: #008800; font-weight: bold">var</span> Article <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../models/Article.js&#39;</span>);
-<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>);
+63</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span>&#39;mongoose&#39;</span>);
+<span style="color: #008800; font-weight: bold">var</span> Article <span style="color: #333333">=</span> require(<span>&#39;./../models/Article.js&#39;</span>);
+<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span>&#39;lodash&#39;</span>);
 
 module.exports.list <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res) {
   Article.find(<span style="color: #008800; font-weight: bold">function</span>(error, data) {
@@ -1169,9 +1169,9 @@ module.exports.update <span style="color: #333333">=</span> <span style="color: 
 };
 
 exports.articleByID <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res, next, id) {
-	Article.findById(id).populate(<span style="background-color: #fff0f0">&#39;user&#39;</span>, <span style="background-color: #fff0f0">&#39;email&#39;</span>).exec(<span style="color: #008800; font-weight: bold">function</span>(err, article) {
+	Article.findById(id).populate(<span>&#39;user&#39;</span>, <span>&#39;email&#39;</span>).exec(<span style="color: #008800; font-weight: bold">function</span>(err, article) {
 		<span style="color: #008800; font-weight: bold">if</span> (err) <span style="color: #008800; font-weight: bold">return</span> next(err);
-		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>article) <span style="color: #008800; font-weight: bold">return</span> next(<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Error</span>(<span style="background-color: #fff0f0">&#39;Failed to load article &#39;</span> <span style="color: #333333">+</span> id));
+		<span style="color: #008800; font-weight: bold">if</span> (<span style="color: #333333">!</span>article) <span style="color: #008800; font-weight: bold">return</span> next(<span style="color: #008800; font-weight: bold">new</span> <span style="color: #007020">Error</span>(<span>&#39;Failed to load article &#39;</span> <span style="color: #333333">+</span> id));
 		req.article <span style="color: #333333">=</span> article;
 		next();
 	});
@@ -1219,34 +1219,34 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 26
 27
 28
-29</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+29</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #0000DD; font-weight: bold">0</span><span>:</span>
 {
-<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7f&quot;</span>
-<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
-<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
-<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.834Z&quot;</span>
-<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 1&quot;</span>
-<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 1&quot;</span>
+<span style="color: #007700">&quot;_id&quot;</span>: <span>&quot;569cbefe877baaf001e43b7f&quot;</span>
+<span>&quot;user&quot;</span>: <span>&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span>&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span>&quot;created&quot;</span>: <span>&quot;2016-01-18T10:31:26.834Z&quot;</span>
+<span>&quot;content&quot;</span>: <span>&quot;content for article 1&quot;</span>
+<span>&quot;title&quot;</span>: <span>&quot;article 1&quot;</span>
 }
 
-<span style="color: #0000DD; font-weight: bold">1</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+<span style="color: #0000DD; font-weight: bold">1</span><span>:</span>
 {
-<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b80&quot;</span>
-<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
-<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
-<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.836Z&quot;</span>
-<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 2&quot;</span>
-<span style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 2&quot;</span>
+<span style="color: #007700">&quot;_id&quot;</span>: <span>&quot;569cbefe877baaf001e43b80&quot;</span>
+<span>&quot;user&quot;</span>: <span>&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span>&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span>&quot;created&quot;</span>: <span>&quot;2016-01-18T10:31:26.836Z&quot;</span>
+<span>&quot;content&quot;</span>: <span>&quot;content for article 2&quot;</span>
+<span>&quot;title&quot;</span>: <span>&quot;article 2&quot;</span>
 }
 
-<span  id="signUp" style="color: #0000DD; font-weight: bold">2</span><span style="color: #FF0000; background-color: #FFAAAA">:</span>
+<span  id="signUp" style="color: #0000DD; font-weight: bold">2</span><span>:</span>
 {
-<span style="color: #007700">&quot;_id&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b81&quot;</span>
-<span style="background-color: #fff0f0">&quot;user&quot;</span>: <span style="background-color: #fff0f0">&quot;569cbefe877baaf001e43b7e&quot;</span>
-<span style="background-color: #fff0f0">&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
-<span style="background-color: #fff0f0">&quot;created&quot;</span>: <span style="background-color: #fff0f0">&quot;2016-01-18T10:31:26.836Z&quot;</span>
-<span style="background-color: #fff0f0">&quot;content&quot;</span>: <span style="background-color: #fff0f0">&quot;content for article 3&quot;</span>
-<span  id="clientSideSignUp" style="background-color: #fff0f0">&quot;title&quot;</span>: <span style="background-color: #fff0f0">&quot;article 3&quot;</span>
+<span style="color: #007700">&quot;_id&quot;</span>: <span>&quot;569cbefe877baaf001e43b81&quot;</span>
+<span>&quot;user&quot;</span>: <span>&quot;569cbefe877baaf001e43b7e&quot;</span>
+<span>&quot;__v&quot;</span>: <span style="color: #0000DD; font-weight: bold">0</span>
+<span>&quot;created&quot;</span>: <span>&quot;2016-01-18T10:31:26.836Z&quot;</span>
+<span>&quot;content&quot;</span>: <span>&quot;content for article 3&quot;</span>
+<span  id="clientSideSignUp">&quot;title&quot;</span>: <span>&quot;article 3&quot;</span>
 }
 </pre></td></tr></table></div>
            </div>
@@ -1408,20 +1408,20 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
 146
 147
 148
-149</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span style="background-color: #fff0f0">&#39;react&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> { Link } from <span style="background-color: #fff0f0">&#39;react-router&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label, Input, ButtonInput, MenuItem} from <span style="background-color: #fff0f0">&#39;react-bootstrap&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span style="background-color: #fff0f0">&#39;react-router-bootstrap&#39;</span>;
-<span style="color: #008800; font-weight: bold">import</span> auth from <span style="background-color: #fff0f0">&#39;./../../services/Authentication&#39;</span>;
+149</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> React from <span>&#39;react&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> { Link } from <span>&#39;react-router&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {Grid, Row, Col, Panel, Pagination,Button, Well, Label, Input, ButtonInput, MenuItem} from <span>&#39;react-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> {LinkContainer} from <span>&#39;react-router-bootstrap&#39;</span>;
+<span style="color: #008800; font-weight: bold">import</span> auth from <span>&#39;./../../services/Authentication&#39;</span>;
 
 <span style="color: #008800; font-weight: bold">class</span> Signup <span style="color: #008800; font-weight: bold">extends</span> React.Component {
   constructor(props, context){
     <span style="color: #008800; font-weight: bold">super</span>(props, context);
     <span style="color: #008800; font-weight: bold">this</span>.state <span style="color: #333333">=</span> {};
     <span style="color: #008800; font-weight: bold">this</span>.state.userInfo <span style="color: #333333">=</span> {};
-    <span style="color: #008800; font-weight: bold">this</span>.state.error <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
-    <span style="color: #008800; font-weight: bold">this</span>.state.email <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
-    <span style="color: #008800; font-weight: bold">this</span>.state.password <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.state.error <span style="color: #333333">=</span> <span>&#39;&#39;</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.state.email <span style="color: #333333">=</span> <span>&#39;&#39;</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.state.password <span style="color: #333333">=</span> <span>&#39;&#39;</span>;
     <span style="color: #008800; font-weight: bold">this</span>.validPassword<span style="color: #333333">=</span><span style="color: #008800; font-weight: bold">false</span>;
     <span style="color: #008800; font-weight: bold">this</span>.history <span style="color: #333333">=</span> props.history;
     <span style="color: #008800; font-weight: bold">this</span>.handleInputFirstName <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.handleInputFirstName.bind(<span style="color: #008800; font-weight: bold">this</span>);
@@ -1439,35 +1439,35 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
   }
 
   handleInputFirstName(e){
-    <span style="color: #008800; font-weight: bold">this</span>.validFirstName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.validFirstName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span>&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
     <span style="color: #008800; font-weight: bold">this</span>.state.userInfo.firstName <span style="color: #333333">=</span> e.target.value;
     <span style="color: #008800; font-weight: bold">this</span>.setState({userInfo<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.userInfo});
-    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;&#39;</span>});
+    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span>&#39;&#39;</span>});
   }
 
   handleInputLastName(e){
-    <span style="color: #008800; font-weight: bold">this</span>.validLastName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.validLastName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span>&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
     <span style="color: #008800; font-weight: bold">this</span>.state.userInfo.lastName <span style="color: #333333">=</span> e.target.value;
     <span style="color: #008800; font-weight: bold">this</span>.setState({userInfo<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.userInfo});
-    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;&#39;</span>});
+    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span>&#39;&#39;</span>});
   }
 
   handleInputEmail(e){
     <span style="color: #008800; font-weight: bold">this</span>.validEmail<span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.validateEmail(e.target.value)
     <span style="color: #008800; font-weight: bold">this</span>.state.userInfo.email <span style="color: #333333">=</span> e.target.value;
     <span style="color: #008800; font-weight: bold">this</span>.setState({userInfo <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.userInfo});
-    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;&#39;</span>});
+    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span>&#39;&#39;</span>});
   }
 
   handleInputUserName(e){
-    <span style="color: #008800; font-weight: bold">this</span>.validUserName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span style="background-color: #fff0f0">&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
+    <span style="color: #008800; font-weight: bold">this</span>.validUserName<span style="color: #333333">=</span> e.target.value<span style="color: #333333">!==</span><span>&quot;&quot;</span> <span style="color: #333333">?</span> <span style="color: #008800; font-weight: bold">true</span> <span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">false</span>;
     <span style="color: #008800; font-weight: bold">this</span>.state.userInfo.username <span style="color: #333333">=</span> e.target.value;
     <span style="color: #008800; font-weight: bold">this</span>.setState({userInfo<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">this</span>.state.userInfo});
-    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;&#39;</span>});
+    <span style="color: #008800; font-weight: bold">this</span>.setState({error<span style="color: #333333">:</span><span>&#39;&#39;</span>});
   }
 
   handleInputPassword(e){
-    <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>});
+    <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;&#39;</span>});
     <span style="color: #008800; font-weight: bold">if</span>(e.target.value.length <span style="color: #333333">&lt;</span> <span style="color: #0000DD; font-weight: bold">6</span>){
       <span style="color: #008800; font-weight: bold">this</span>.validatePassword<span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span>;
     }
@@ -1482,19 +1482,19 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
     e.preventDefault();
 
     <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.validFirstName){
-          <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Please Input the First Name&#39;</span>});
+          <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;Please Input the First Name&#39;</span>});
         }
     <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.validLastName){
-              <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Please Input the Last Name&#39;</span>});
+              <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;Please Input the Last Name&#39;</span>});
             }
             <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.validEmail){
-                      <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Please Input Correct Email Address&#39;</span>});
+                      <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;Please Input Correct Email Address&#39;</span>});
                     }
     <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.validUserName){
-            <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Please Input the User Name&#39;</span>});
+            <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;Please Input the User Name&#39;</span>});
         }
         <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span>(<span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.validPassword){
-                <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Password Should Be Longer than 6 Charecters&#39;</span>});
+                <span style="color: #008800; font-weight: bold">this</span>.setState({error <span style="color: #333333">:</span> <span>&#39;Password Should Be Longer than 6 Charecters&#39;</span>});
             }
     <span style="color: #008800; font-weight: bold">else</span>{
       <span style="color: #008800; font-weight: bold">var</span> newUser <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.state.userInfo;
@@ -1508,51 +1508,51 @@ exports.articleByID <span style="color: #333333">=</span> <span style="color: #0
         <span style="color: #333333">&lt;</span>Row<span style="color: #333333">&gt;</span>
           <span style="color: #333333">&lt;</span>h2<span style="color: #333333">&gt;</span>
             Sign up Using Email
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/h2&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/h2&gt;</span>
           <span style="color: #333333">&lt;</span>hr<span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>Col md<span style="color: #333333">=</span>{<span style="color: #0000DD; font-weight: bold">12</span>}<span style="color: #333333">&gt;</span>
 
 
         <span style="color: #333333">&lt;</span>form onSubmit<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.formSubmit}<span style="color: #333333">&gt;</span>
           <span style="color: #333333">&lt;</span>Input
-            placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;First Name&quot;</span>
+            placeholder<span style="color: #333333">=</span><span>&quot;First Name&quot;</span>
             onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputFirstName}
-            label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;First Name&quot;</span>
-            type <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span> <span style="color: #333333">/&gt;</span>
+            label<span style="color: #333333">=</span><span>&quot;First Name&quot;</span>
+            type <span style="color: #333333">=</span><span>&quot;text&quot;</span> <span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>br<span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>Input
-            placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Last Name&quot;</span>
+            placeholder<span style="color: #333333">=</span><span>&quot;Last Name&quot;</span>
             onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputLastName}
-            label <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Last Name&quot;</span>
-            type <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
+            label <span style="color: #333333">=</span><span>&quot;Last Name&quot;</span>
+            type <span style="color: #333333">=</span><span>&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>br<span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>Input
-            placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Email&quot;</span>
+            placeholder<span style="color: #333333">=</span><span>&quot;Enter Email&quot;</span>
             onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputEmail}
-            label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Email&quot;</span>
-            type <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
+            label<span style="color: #333333">=</span><span>&quot;Email&quot;</span>
+            type <span style="color: #333333">=</span><span>&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>br<span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>Input
-            placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;User Name&quot;</span>
+            placeholder<span style="color: #333333">=</span><span>&quot;User Name&quot;</span>
             onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputUserName}
-            label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;User Name&quot;</span>
-            type <span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
+            label<span style="color: #333333">=</span><span>&quot;User Name&quot;</span>
+            type <span style="color: #333333">=</span><span>&quot;text&quot;</span><span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>br<span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>Input
-            placeholder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Enter Password&quot;</span>
+            placeholder<span style="color: #333333">=</span><span>&quot;Enter Password&quot;</span>
             onChange<span style="color: #333333">=</span>{<span style="color: #008800; font-weight: bold">this</span>.handleInputPassword}
-            label<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;Password&quot;</span>
-            type<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;password&quot;</span> <span style="color: #333333">/&gt;</span>
+            label<span style="color: #333333">=</span><span>&quot;Password&quot;</span>
+            type<span style="color: #333333">=</span><span>&quot;password&quot;</span> <span style="color: #333333">/&gt;</span>
           <span style="color: #333333">&lt;</span>br<span style="color: #333333">/&gt;</span>
-          <span style="color: #333333">&lt;</span>Button bsStyle<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;primary&quot;</span><span style="color: #333333">&gt;</span>
+          <span style="color: #333333">&lt;</span>Button bsStyle<span style="color: #333333">=</span><span>&quot;primary&quot;</span><span style="color: #333333">&gt;</span>
             Sign up
-          <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Button&gt; &amp;nbsp; or&amp;nbsp;</span>
-          <span style="color: #333333">&lt;</span>LinkContainer to<span style="color: #333333">=</span><span style="background-color: #fff0f0">&quot;/signin&quot;</span><span style="color: #333333">&gt;&lt;</span>a<span style="color: #333333">&gt;</span>Sign In<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/a&gt;&lt;/LinkContainer&gt;</span>
-          <span style="color: #333333">&lt;</span>p<span style="color: #333333">&gt;</span>{<span style="color: #008800; font-weight: bold">this</span>.state.error}<span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/p&gt;</span>
-        <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/form&gt;</span>
-      <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Col&gt;</span>
-    <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Row&gt;</span>
-  <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Grid&gt;</span>
+          <span style="color: #333333">&lt;</span><span>/Button&gt; &amp;nbsp; or&amp;nbsp;</span>
+          <span style="color: #333333">&lt;</span>LinkContainer to<span style="color: #333333">=</span><span>&quot;/signin&quot;</span><span style="color: #333333">&gt;&lt;</span>a<span style="color: #333333">&gt;</span>Sign In<span style="color: #333333">&lt;</span><span>/a&gt;&lt;/LinkContainer&gt;</span>
+          <span style="color: #333333">&lt;</span>p<span style="color: #333333">&gt;</span>{<span style="color: #008800; font-weight: bold">this</span>.state.error}<span style="color: #333333">&lt;</span><span>/p&gt;</span>
+        <span style="color: #333333">&lt;</span><span>/form&gt;</span>
+      <span style="color: #333333">&lt;</span><span>/Col&gt;</span>
+    <span style="color: #333333">&lt;</span><span>/Row&gt;</span>
+  <span style="color: #333333">&lt;</span><span>/Grid&gt;</span>
     )
   }
 }
@@ -1744,22 +1744,22 @@ front-end cookie or use the token system that is stored in the front end.
 139
 140
 141
-142</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
+142</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> mongoose <span style="color: #333333">=</span> require(<span>&#39;mongoose&#39;</span>),
     Schema <span style="color: #333333">=</span> mongoose.Schema,
-    crypto <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;crypto&#39;</span>);
+    crypto <span style="color: #333333">=</span> require(<span>&#39;crypto&#39;</span>);
 
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * A Validation function for local strategy properties</span>
 <span style="color: #888888"> */</span>
 <span style="color: #008800; font-weight: bold">var</span> validateLocalStrategyProperty <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(property) {
-    <span style="color: #008800; font-weight: bold">return</span> ((<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span style="background-color: #fff0f0">&#39;local&#39;</span> <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.updated) <span style="color: #333333">||</span> property.length);
+    <span style="color: #008800; font-weight: bold">return</span> ((<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span>&#39;local&#39;</span> <span style="color: #333333">&amp;&amp;</span> <span style="color: #333333">!</span><span style="color: #008800; font-weight: bold">this</span>.updated) <span style="color: #333333">||</span> property.length);
 };
 
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * A Validation function for local strategy password</span>
 <span style="color: #888888"> */</span>
 <span style="color: #008800; font-weight: bold">var</span> validateLocalStrategyPassword <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(password) {
-    <span style="color: #008800; font-weight: bold">return</span> (<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span style="background-color: #fff0f0">&#39;local&#39;</span> <span style="color: #333333">||</span> (password <span style="color: #333333">&amp;&amp;</span> password.length <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">6</span>));
+    <span style="color: #008800; font-weight: bold">return</span> (<span style="color: #008800; font-weight: bold">this</span>.provider <span style="color: #333333">!==</span> <span>&#39;local&#39;</span> <span style="color: #333333">||</span> (password <span style="color: #333333">&amp;&amp;</span> password.length <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">6</span>));
 };
 
 <span style="color: #888888">/**</span>
@@ -1770,13 +1770,13 @@ front-end cookie or use the token system that is stored in the front end.
     firstName<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>
               },
 
     lastName<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>
 
     },
 
@@ -1788,9 +1788,9 @@ front-end cookie or use the token system that is stored in the front end.
     email<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>,
-        unique<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Email already exists&#39;</span>,
+        unique<span style="color: #333333">:</span> <span>&#39;Email already exists&#39;</span>,
 
-        match<span style="color: #333333">:</span> [<span style="color: #000000; background-color: #fff0ff">/.+\@.+\..+/</span>, <span style="background-color: #fff0f0">&#39;Please fill a valid email address&#39;</span>]
+        match<span style="color: #333333">:</span> [<span style="color: #000000; background-color: #fff0ff">/.+\@.+\..+/</span>, <span>&#39;Please fill a valid email address&#39;</span>]
     },
     username<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
@@ -1798,44 +1798,44 @@ front-end cookie or use the token system that is stored in the front end.
     },
     photo<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;http://www.ee-ip.org/sites/default/files/default_images/default-user.png&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;http://www.ee-ip.org/sites/default/files/default_images/default-user.png&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
     description<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
     linkedin<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
     twitter<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
         trim<span style="color: #333333">:</span> <span style="color: #008800; font-weight: bold">true</span>
     },
     password<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;&#39;</span>,
-        validate<span style="color: #333333">:</span> [validateLocalStrategyPassword, <span style="background-color: #fff0f0">&#39;Password should be longer&#39;</span>]
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> <span>&#39;&#39;</span>,
+        validate<span style="color: #333333">:</span> [validateLocalStrategyPassword, <span>&#39;Password should be longer&#39;</span>]
     },
     salt<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>
     },
     provider<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-        required<span style="color: #333333">:</span> <span style="background-color: #fff0f0">&#39;Provider is required&#39;</span>
+        required<span style="color: #333333">:</span> <span>&#39;Provider is required&#39;</span>
     },
     providerData<span style="color: #333333">:</span> {},
     additionalProvidersData<span style="color: #333333">:</span> {},
     roles<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> [{
             type<span style="color: #333333">:</span> <span style="color: #007020">String</span>,
-            <span style="color: #008800; font-weight: bold">enum</span><span style="color: #333333">:</span> [<span style="background-color: #fff0f0">&#39;user&#39;</span>, <span style="background-color: #fff0f0">&#39;admin&#39;</span>]
+            <span style="color: #008800; font-weight: bold">enum</span><span style="color: #333333">:</span> [<span>&#39;user&#39;</span>, <span>&#39;admin&#39;</span>]
         }],
-        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> [<span style="background-color: #fff0f0">&#39;user&#39;</span>]
+        <span style="color: #008800; font-weight: bold">default</span><span style="color: #333333">:</span> [<span>&#39;user&#39;</span>]
     },
     updated<span style="color: #333333">:</span> {
         type<span style="color: #333333">:</span> <span style="color: #007020">Date</span>
@@ -1856,9 +1856,9 @@ front-end cookie or use the token system that is stored in the front end.
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * Hook a pre save method to hash the password</span>
 <span style="color: #888888"> */</span>
-UserSchema.pre(<span style="background-color: #fff0f0">&#39;save&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(next) {
+UserSchema.pre(<span>&#39;save&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(next) {
     <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.password <span style="color: #333333">&amp;&amp;</span> <span style="color: #008800; font-weight: bold">this</span>.password.length <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">6</span>) {
-        <span style="color: #008800; font-weight: bold">this</span>.salt <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Buffer(crypto.randomBytes(<span style="color: #0000DD; font-weight: bold">16</span>).toString(<span style="background-color: #fff0f0">&#39;base64&#39;</span>), <span style="background-color: #fff0f0">&#39;base64&#39;</span>);
+        <span style="color: #008800; font-weight: bold">this</span>.salt <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Buffer(crypto.randomBytes(<span style="color: #0000DD; font-weight: bold">16</span>).toString(<span>&#39;base64&#39;</span>), <span>&#39;base64&#39;</span>);
         <span style="color: #008800; font-weight: bold">this</span>.password <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">this</span>.hashPassword(<span style="color: #008800; font-weight: bold">this</span>.password);
     }
 
@@ -1870,7 +1870,7 @@ UserSchema.pre(<span style="background-color: #fff0f0">&#39;save&#39;</span>, <s
 <span style="color: #888888"> */</span>
 UserSchema.methods.hashPassword <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(password) {
     <span style="color: #008800; font-weight: bold">if</span> (<span style="color: #008800; font-weight: bold">this</span>.salt <span style="color: #333333">&amp;&amp;</span> password) {
-        <span style="color: #008800; font-weight: bold">return</span> crypto.pbkdf2Sync(password, <span style="color: #008800; font-weight: bold">this</span>.salt, <span style="color: #0000DD; font-weight: bold">10000</span>, <span style="color: #0000DD; font-weight: bold">64</span>).toString(<span style="background-color: #fff0f0">&#39;base64&#39;</span>);
+        <span style="color: #008800; font-weight: bold">return</span> crypto.pbkdf2Sync(password, <span style="color: #008800; font-weight: bold">this</span>.salt, <span style="color: #0000DD; font-weight: bold">10000</span>, <span style="color: #0000DD; font-weight: bold">64</span>).toString(<span>&#39;base64&#39;</span>);
     } <span style="color: #008800; font-weight: bold">else</span> {
         <span style="color: #008800; font-weight: bold">return</span> password;
     }
@@ -1884,7 +1884,7 @@ UserSchema.methods.authenticate <span style="color: #333333">=</span> <span styl
 };
 
 
-<span style="color: #008800; font-weight: bold">var</span> User <span style="color: #333333">=</span> mongoose.model(<span style="background-color: #fff0f0">&#39;User&#39;</span>, UserSchema);
+<span style="color: #008800; font-weight: bold">var</span> User <span style="color: #333333">=</span> mongoose.model(<span>&#39;User&#39;</span>, UserSchema);
 module.exports <span style="color: #333333">=</span> User;
 </pre></td></tr></table></div>
 
@@ -1914,30 +1914,30 @@ module.exports <span style="color: #333333">=</span> User;
 22
 23
 24
-25</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> passport <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;passport&#39;</span>);
+25</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> passport <span style="color: #333333">=</span> require(<span>&#39;passport&#39;</span>);
 
 module.exports <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(app) {
 	<span style="color: #888888">// User Routes</span>
-	<span style="color: #008800; font-weight: bold">var</span> users <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;./../controllers/users.server.controller&#39;</span>);
+	<span style="color: #008800; font-weight: bold">var</span> users <span style="color: #333333">=</span> require(<span>&#39;./../controllers/users.server.controller&#39;</span>);
 
 	<span style="color: #888888">// Setting up the users profile api</span>
-	app.route(<span style="background-color: #fff0f0">&#39;/users/me&#39;</span>).get(users.me);
-	app.route(<span style="background-color: #fff0f0">&#39;/users/:userId&#39;</span>).get(users.read);
-	app.route(<span style="background-color: #fff0f0">&#39;/users/:userId&#39;</span>).put(users.update);
-	app.route(<span style="background-color: #fff0f0">&#39;/users/accounts&#39;</span>).<span style="color: #008800; font-weight: bold">delete</span>(users.removeOAuthProvider);
+	app.route(<span>&#39;/users/me&#39;</span>).get(users.me);
+	app.route(<span>&#39;/users/:userId&#39;</span>).get(users.read);
+	app.route(<span>&#39;/users/:userId&#39;</span>).put(users.update);
+	app.route(<span>&#39;/users/accounts&#39;</span>).<span style="color: #008800; font-weight: bold">delete</span>(users.removeOAuthProvider);
 
 	<span style="color: #888888">// Setting up the users password api</span>
-	app.route(<span style="background-color: #fff0f0">&#39;/users/password&#39;</span>).post(users.changePassword);
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/forgot&#39;</span>).post(users.forgot);
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/reset/:token&#39;</span>).get(users.validateResetToken);
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/reset/:token&#39;</span>).post(users.reset);
+	app.route(<span>&#39;/users/password&#39;</span>).post(users.changePassword);
+	app.route(<span>&#39;/auth/forgot&#39;</span>).post(users.forgot);
+	app.route(<span>&#39;/auth/reset/:token&#39;</span>).get(users.validateResetToken);
+	app.route(<span>&#39;/auth/reset/:token&#39;</span>).post(users.reset);
 
 	<span style="color: #888888">// Setting up the users authentication api</span>
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/signup&#39;</span>).post(users.signup);
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/signin&#39;</span>).post(users.signin);
-	app.route(<span style="background-color: #fff0f0">&#39;/auth/signout&#39;</span>).get(users.signout);
+	app.route(<span>&#39;/auth/signup&#39;</span>).post(users.signup);
+	app.route(<span>&#39;/auth/signin&#39;</span>).post(users.signin);
+	app.route(<span>&#39;/auth/signout&#39;</span>).get(users.signout);
 
-	app.param(<span style="background-color: #fff0f0">&#39;userId&#39;</span>, users.userByID);
+	app.param(<span>&#39;userId&#39;</span>, users.userByID);
 };
 </pre></td></tr></table></div>
 
@@ -1964,16 +1964,16 @@ module.exports <span style="color: #333333">=</span> <span style="color: #008800
  8
  9
 10
-11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>);
+11</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span>&#39;lodash&#39;</span>);
 
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * Extend user&#39;s controller</span>
 <span style="color: #888888"> */</span>
 module.exports <span style="color: #333333">=</span> _.extend(
-	require(<span style="background-color: #fff0f0">&#39;./users/users.authentication.server.controller&#39;</span>),
-	require(<span style="background-color: #fff0f0">&#39;./users/users.authorization.server.controller&#39;</span>),
-	require(<span style="background-color: #fff0f0">&#39;./users/users.password.server.controller&#39;</span>),
-	require(<span style="background-color: #fff0f0">&#39;./users/users.profile.server.controller&#39;</span>)
+	require(<span>&#39;./users/users.authentication.server.controller&#39;</span>),
+	require(<span>&#39;./users/users.authorization.server.controller&#39;</span>),
+	require(<span>&#39;./users/users.password.server.controller&#39;</span>),
+	require(<span>&#39;./users/users.profile.server.controller&#39;</span>)
 );
 </pre></td></tr></table></div>
 
@@ -2060,16 +2060,16 @@ module.exports <span style="color: #333333">=</span> _.extend(
 78
 79
 80
-81</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="background-color: #fff0f0">&#39;use strict&#39;</span>;
+81</pre></td><td><pre style="margin: 0; line-height: 125%"><span>&#39;use strict&#39;</span>;
 
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * Module dependencies.</span>
 <span style="color: #888888"> */</span>
-<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;lodash&#39;</span>),
-	errorHandler <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;../errors.server.controller&#39;</span>),
-	mongoose <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;mongoose&#39;</span>),
-	passport <span style="color: #333333">=</span> require(<span style="background-color: #fff0f0">&#39;passport&#39;</span>),
-	User <span style="color: #333333">=</span> mongoose.model(<span style="background-color: #fff0f0">&#39;User&#39;</span>);
+<span style="color: #008800; font-weight: bold">var</span> _ <span style="color: #333333">=</span> require(<span>&#39;lodash&#39;</span>),
+	errorHandler <span style="color: #333333">=</span> require(<span>&#39;../errors.server.controller&#39;</span>),
+	mongoose <span style="color: #333333">=</span> require(<span>&#39;mongoose&#39;</span>),
+	passport <span style="color: #333333">=</span> require(<span>&#39;passport&#39;</span>),
+	User <span style="color: #333333">=</span> mongoose.model(<span>&#39;User&#39;</span>);
 
 <span style="color: #888888">/**</span>
 <span style="color: #888888"> * Signup</span>
@@ -2083,7 +2083,7 @@ exports.signup <span style="color: #333333">=</span> <span style="color: #008800
 	<span style="color: #008800; font-weight: bold">var</span> message <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">null</span>;
 
 	<span style="color: #888888">// Add missing user fields</span>
-	user.provider <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;local&#39;</span>;
+	user.provider <span style="color: #333333">=</span> <span>&#39;local&#39;</span>;
 
 	<span style="color: #888888">// Then save the user</span>
 	user.save(<span style="color: #008800; font-weight: bold">function</span>(err) {
@@ -2112,7 +2112,7 @@ exports.signup <span style="color: #333333">=</span> <span style="color: #008800
 <span style="color: #888888"> */</span>
 exports.signin <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">function</span>(req, res, next) {
 
-	passport.authenticate(<span style="background-color: #fff0f0">&#39;local&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(err, user, info) {
+	passport.authenticate(<span>&#39;local&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(err, user, info) {
 		<span style="color: #008800; font-weight: bold">if</span> (err <span style="color: #333333">||</span> <span style="color: #333333">!</span>user) {
 			res.status(<span style="color: #0000DD; font-weight: bold">400</span>).send(info);
 		} <span style="color: #008800; font-weight: bold">else</span> {
@@ -2139,7 +2139,7 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 		<span style="color: #008800; font-weight: bold">if</span>(err){
 		}
 	});
-	res.status(<span style="color: #0000DD; font-weight: bold">200</span>).send({message<span style="color: #333333">:</span><span id="testCode" style="background-color: #fff0f0">&quot;signed out&quot;</span>});
+	res.status(<span style="color: #0000DD; font-weight: bold">200</span>).send({message<span style="color: #333333">:</span><span id="testCode">&quot;signed out&quot;</span>});
 };
 </pre></td></tr></table></div>
 
@@ -2189,9 +2189,9 @@ Each entity have its own test file located inside the <b>server/tests</b> folder
 ... ... ... ...
 ... ... ... ...
 
-describe(<span style="background-color: #fff0f0">&#39;Method Save&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>() {
-  it(<span style="background-color: #fff0f0">&#39;should be able to show an error when try to save without title&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(done) {
-    article.title <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&#39;&#39;</span>;
+describe(<span>&#39;Method Save&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>() {
+  it(<span>&#39;should be able to show an error when try to save without title&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(done) {
+    article.title <span style="color: #333333">=</span> <span>&#39;&#39;</span>;
 
     <span style="color: #008800; font-weight: bold">return</span> article.save(<span style="color: #008800; font-weight: bold">function</span>(err) {
       should.exist(err);
@@ -2228,15 +2228,15 @@ describe(<span style="background-color: #fff0f0">&#39;Method Save&#39;</span>, <
 19
 20
 21
-22</pre></td><td><pre style="margin: 0; line-height: 125%">describe(<span style="background-color: #fff0f0">&#39;Article CRUD tests&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>() {
+22</pre></td><td><pre style="margin: 0; line-height: 125%">describe(<span>&#39;Article CRUD tests&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>() {
   beforeEach(<span style="color: #008800; font-weight: bold">function</span>(done) {
     .........
     .........
     .........
   });
 
-  it(<span style="background-color: #fff0f0">&#39;should not be able to save article instance if not logged in&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(done) {
-    agent.post(<span style="background-color: #fff0f0">&#39;/api/articles&#39;</span>)
+  it(<span>&#39;should not be able to save article instance if not logged in&#39;</span>, <span style="color: #008800; font-weight: bold">function</span>(done) {
+    agent.post(<span>&#39;/api/articles&#39;</span>)
       .send(article)
       .expect(<span style="color: #0000DD; font-weight: bold">401</span>)
       .end(<span style="color: #008800; font-weight: bold">function</span>(articleSaveErr, articleSaveRes) {
@@ -2271,7 +2271,7 @@ describe(<span style="background-color: #fff0f0">&#39;Method Save&#39;</span>, <
 </p>
 </br>
 <h2  id="clientSidetestCode">Client Side</h2>
-<h5 id="config" style ="color: #777; font-size: 24px">Coming Soon</h5>
+<h5 id="config" style ="color: #777;">Coming Soon</h5>
 </br>
 </div>
 <div>
@@ -2330,7 +2330,63 @@ The port used by the application, default is 3000, but as you can notice in the 
 <div>
 <h1 id="isomorphic">Isomorphic</h1>
 <hr>
-<h4 style ="color: #777; font-size: 24px">Coming Soon</h4>
+<h2>Isomorphic Web Apps</h2>
+<p>Isomorphic web applications are applications written in JavaScript that can run both on the client, and on the server. This means writing the code once, and then executing it on the server to render static pages, and on the client to allow for fast interactions. This approach takes the best of the two worlds; making the application SEO-friendly and giving the performance benefit of faster server-side rendered HTML, sent with the initial request before the JavaScript kicks in for user interactions.</p>
+<h3>Server-side rendering with React and React-router</h3>
+<p>Server-side rendering is fairly easy to achieve using React's <strong>renderToString()</strong> method and react-router's <strong>match()</strong> method.</p>
+<div class="example-title">routeHelper.js</div>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">...
+<span style="color: #008800; font-weight: bold">const</span> routes <span style="color: #333333">=</span> {
+    path<span style="color: #333333">:</span> <span>&#39;/&#39;</span>,
+    component<span style="color: #333333">:</span> require(<span>&#39;./../../app/components/core/Template&#39;</span>),
+    indexRoute<span style="color: #333333">:</span> {
+      component<span style="color: #333333">:</span> require(<span>&#39;./../../app/components/core/Home&#39;</span>)
+    },
+    childRoutes<span style="color: #333333">:</span> [
+      {
+        path<span style="color: #333333">:</span> <span>&#39;/articles/create&#39;</span>,
+        component<span style="color: #333333">:</span> require(<span>&#39;./../../app/components/articles/CreateArticle&#39;</span>)
+      }, {
+        path<span style="color: #333333">:</span> <span>&#39;/articles&#39;</span>,
+        component<span style="color: #333333">:</span> require(<span>&#39;./../../app/components/articles/ListArticles&#39;</span>)
+      },
+    ...
+    ]
+  };
+
+  app.use((req, res, next) <span style="color: #333333">=&gt;</span> {
+    <span style="color: #008800; font-weight: bold">const</span> location <span style="color: #333333">=</span> createLocation(req.path);
+    <strong>match</strong>({
+      routes,
+      location
+    }, (error, redirectLocation, renderProps) <span style="color: #333333">=&gt;</span> {
+      <span style="color: #008800; font-weight: bold">if</span> (error) {
+        res.status(<span style="color: #0000DD; font-weight: bold">500</span>).send(error.message)
+      } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (redirectLocation) {
+        res.redirect(<span style="color: #0000DD; font-weight: bold">302</span>, redirectLocation.pathname <span style="color: #333333">+</span> redirectLocation.search)
+      } <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (renderProps) {
+
+        <span style="color: #008800; font-weight: bold">var</span> generated <span style="color: #333333">=</span> <strong>renderToString</strong>(<span style="color: #333333">&lt;</span> RoutingContext { ...renderProps } <span style="color: #333333">/&gt;</span>);
+        res.render(<span>&#39;./../app/index.ejs&#39;</span>, {reactOutput<span style="color: #333333">:</span> generated});
+
+      } <span style="color: #008800; font-weight: bold">else</span> {
+        next();
+      }
+    })
+  })
+...
+</pre></div>
+<h3>Server generated output placed in the frontend</h3>
+<div class="example-title">index.ejs</div>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">...
+<span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span>&quot;mount&quot;</span><span style="color: #007700">&gt;</span>
+    <span>&lt;</span>%- reactOutput %&gt;
+<span style="color: #007700">&lt;/div&gt;</span>
+...
+</pre></div>
+
+<h3>Server-side rendering with data</h3>
+<h5 style ="color: #777;">Coming Soon</h5>
 </div>
     </div>
 
