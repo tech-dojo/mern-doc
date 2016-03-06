@@ -230,11 +230,16 @@
 |------models
 |------routes
 |------strategies
-|------tests
 |------express.js
 |------passport.js
 |------seeds.js
 |------server.js
+
+|-tests
+|------componentTest
+|------article.server.model.test.js
+|------article.server.routes.test.js
+|------user.server.model.test.js
 
 |-.gitignore
 |-gulpfile.js
@@ -2148,11 +2153,12 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 <div>
 <h1>Test Code</h1>
 <hr>
-<p><span class="l-sub-section">Run all tests with </span></p>
+
+<h2>Server Side</h2>
+<p><span class="l-sub-section">Run tests with </span></p>
 <ul class="shellCommands">
 <li id="folderStructure">$ gulp test</li>
 </ul>
-<h2>Server Side</h2>
 <p>
   Mocha is used to test the server side logic. Mocha tests are asynchronous, easy to maintain, and uses a readable Behavior-driven development(BDD) syntax.
 </p>
@@ -2160,11 +2166,11 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 <h4>Assertions</h4>
 
 <p>
-  Mocha needs an external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">Should.js</span> is being used. <b>Should</b> is an expressive library aiming to simplify tests and also be readable. It extends the <span class="codeInsidePgrph">Object.prototype</span> with a single non-enumerable getter that allows you to express how that object should behave.
+  <b>Mocha</b> needs an external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">Should.js</span> is being used. <b>Should</b> is an expressive library aiming to simplify tests and also be readable. It extends the <span class="codeInsidePgrph">Object.prototype</span> with a single non-enumerable getter that allows you to express how that object should behave.
 </p>
 <h4>Test Files</h4>
 <p class="l-sub-section">
-Each entity have its own test file located inside the <b>server/tests</b> folder. The tests folder contains model tests in <span class="codeInsidePgrph">article.server.model.test.js</span> (unit test) and route tests <span class="codeInsidePgrph">article.server.routes.test.js</span> (functional test).
+Each entity have its own test file located inside the <b>tests</b> folder. The tests folder contains model tests in <span class="codeInsidePgrph">article.server.model.test.js</span> (unit test) and route tests <span class="codeInsidePgrph">article.server.routes.test.js</span> (functional test).
 </p>
 <div class="example-title">article.server.model.test.js</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -2271,8 +2277,92 @@ describe(<span>&#39;Method Save&#39;</span>, <span style="color: #008800; font-w
 </p>
 </br>
 <h2  id="clientSidetestCode">Client Side</h2>
-<h5 id="config" style ="color: #777;">Coming Soon</h5>
+<p><span class="l-sub-section">Run tests with </span></p>
+<ul class="shellCommands">
+<li id="folderStructure">$ npm test</li>
+</ul>
+<p><b>ReactTestUtils</b> makes it easy to test React components in the testing framework and in this project, <b>Mocha</b> is used as testing framework.</p>
 </br>
+<h4>Assertions</h4>
+<p>Mocha needs external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">expect.js</span> and <span class="codeInsidePgrph">expect-jsx</span> is being used.</p>
+<h4>Test Files</h4>
+<p class="l-sub-section">
+The test file located inside the <b>tests/componentTest</b> folder. The tests folder contains front end tests in <span class="codeInsidePgrph">article.test.jsx</span> (unit test).
+</p>
+<div class="example-title">article.test.jsx</div>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></td><td><pre style="margin: 0; line-height: 125%">... ... ... ...
+... ... ... ...
+... ... ... ...
+
+describe(<span style="background-color: #fff0f0">&#39;ListArticlesChild&#39;</span>, () <span style="color: #333333">=&gt;</span> {
+
+  <span style="color: #008800; font-weight: bold">const</span> Articles <span style="color: #333333">=</span> [{ title<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;Article Title1&#39;</span>, content<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;Article Content1&#39;</span> },
+                       { title<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;Article Title2&#39;</span>, content<span style="color: #333333">:</span><span style="background-color: #fff0f0">&#39;Article Content2&#39;</span> }];
+
+  it(<span style="background-color: #fff0f0">&#39;should have Article Array in ListArticlesChild view&#39;</span>, () <span style="color: #333333">=&gt;</span> {
+    <span style="color: #008800; font-weight: bold">const</span> renderer <span style="color: #333333">=</span> TestUtils.createRenderer();
+    renderer.render(<span style="color: #333333">&lt;</span>ListArticlesChild articles<span style="color: #333333">=</span> {Articles}<span style="color: #333333">/&gt;</span>);
+    <span style="color: #008800; font-weight: bold">const</span> actual <span style="color: #333333">=</span> renderer.getRenderOutput();
+    <span style="color: #008800; font-weight: bold">const</span> expected <span style="color: #333333">=</span> <span style="color: #333333">&lt;</span>Panel header<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Article Title1&#39;</span><span style="color: #333333">&gt;</span>
+       Article Content1
+
+    <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Panel&gt;;</span>
+    <span style="color: #008800; font-weight: bold">const</span> expected2 <span style="color: #333333">=</span> <span style="color: #333333">&lt;</span>Panel header<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Article Title2&#39;</span><span style="color: #333333">&gt;</span>
+       Article Content2
+
+    <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Panel&gt;;</span>
+    expect(actual).toIncludeJSX(expected);
+    expect(actual).toIncludeJSX(expected2);
+  });
+});
+
+... ... ... ...
+... ... ... ...
+... ... ... ...
+</pre></td></tr></table></div>
+
+<h4>Writing Tests</h4>
+<p><u><b>There are a few common steps that are used to test an entity:</b></u></p>
+<p>
+  1. Each test start with a "describe" function to indicate which method is being tested.
+</p>
+<p>
+2. Next, the tests using the "it" function.
+</p>
+<p>
+3. Inside"it" function, run the tests functionality and use "expect(...)" to assert the end result. The “toIncludeJSX(...)” is used to pass the mock value.
+</p>
+<p>
+4. Finally the "expect(...)" and “toIncludeJSX(...)” compare the value with each other to get the final result of the specific component.
+</p>
 </div>
 <div>
 <h1>Configuration</h1>
