@@ -2363,6 +2363,183 @@ describe(<span style="background-color: #fff0f0">&#39;ListArticlesChild&#39;</sp
 <p>
 4. Finally the "expect(...)" and “toIncludeJSX(...)” compare the value with each other to get the final result of the specific component.
 </p>
+
+<h2 id="clientSidetestCode">Code Coverage</h2>
+<p><span class="l-sub-section">Run Code Coverage with </span></p>
+<ul class="shellCommands">
+<li id="folderStructure">$ gulp test_cover</li>
+</ul>
+<p>
+ To review which parts of the framework are tested well and which are not <b>Code Coverage</b> is used. Execute <span class="codeInsidePgrph">$ gulp test_cover</span> to collect coverage report,
+ It shows the statistics of all statements, branches, functions and lines triggered by these tests.
+</p>
+<p class="l-sub-section">
+<b>Istanbul</b> is used to generate code coverage. The coverage summary for <b>MERN</b>,
+</p>
+<div class="example-title">Shell Output:</div>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #888888">Starting &#39;front_test_cover&#39;...</span>
+<span style="color: #888888">Running Front End Tests</span>
+
+<span style="color: #888888">  CreateArticle</span>
+<span style="color: #888888">    ✓ _formSubmit should be passed from CreateArticle to Form</span>
+
+<span style="color: #888888">  EditArticle</span>
+<span style="color: #888888">    ✓ _formSubmit and Article should be passed from EditArticle to Form</span>
+
+<span style="color: #888888">  ListArticlesChild</span>
+<span style="color: #888888">Warning: Each child in an array or iterator should have a unique &quot;key&quot; prop. Check the top-level render call using &lt;Row&gt;. See https://fb.me/react-warning-keys for more information.</span>
+<span style="color: #888888">    ✓ should have Article Array in ListArticlesChild view</span>
+
+<span style="color: #888888">  ViewArticleChild</span>
+<span style="color: #888888">    ✓ should have Article in ViewArticleChild view</span>
+
+<span style="color: #888888">  SigninChild</span>
+<span style="color: #888888">    ✓ SigninChild is getting the necessary props</span>
+
+<span style="color: #888888">  SignupChild</span>
+<span style="color: #888888">    ✓ SignupChild is getting the necessary props</span>
+
+<span style="color: #888888">  EditUserProfileChild</span>
+<span style="color: #888888">    ✓ EditUserProfileChild is getting the necessary props</span>
+
+
+<span style="color: #888888">  7 passing (38ms)</span>
+
+
+<span style="color: #888888">=============================== Coverage summary ===============================</span>
+<span style="color: #888888">Statements   : 64.3% ( 317/493 )</span>
+<span style="color: #888888">Branches     : 42.58% ( 109/256 )</span>
+<span style="color: #888888">Functions    : 52.1% ( 62/119 )</span>
+<span style="color: #888888">Lines        : 56.68% ( 191/337 )</span>
+<span style="color: #888888">================================================================================</span>
+
+<span style="color: #888888">Starting &#39;back_test_cover&#39;...</span>
+<span style="color: #888888">Running Backend Tests</span>
+
+
+<span style="color: #888888">  Article Model Unit Tests:</span>
+<span style="color: #888888">    Method Save</span>
+<span style="color: #888888">      ✓ should be able to save without problems</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without title</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without content</span>
+
+<span style="color: #888888">  Article CRUD tests</span>
+<span style="color: #888888">    ✓ should be able to save article instance if logged in (128ms)</span>
+<span style="color: #888888">    ✓ should not be able to save article instance if not logged in</span>
+<span style="color: #888888">    ✓ should not be able to save article instance if no title is provided (50ms)</span>
+<span style="color: #888888">    ✓ should not be able to save article instance if no content is provided (68ms)</span>
+<span style="color: #888888">    ✓ should be able to update article instance if signed in (65ms)</span>
+<span style="color: #888888">    ✓ should be able to update article instance if signed in (57ms)</span>
+<span style="color: #888888">    ✓ should be able to get a list of articles if not signed in</span>
+<span style="color: #888888">    ✓ should be able to get a single article if not signed in</span>
+<span style="color: #888888">    ✓ should be able to delete an article if signed in (52ms)</span>
+
+<span style="color: #888888">  User Model Unit Tests:</span>
+<span style="color: #888888">    Method Save</span>
+<span style="color: #888888">      ✓ should begin with no users</span>
+<span style="color: #888888">      ✓ should be able to save without problems</span>
+<span style="color: #888888">      ✓ should fail to save an existing user again (61ms)</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without first name</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without last name</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without Email</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without User Name</span>
+<span style="color: #888888">      ✓ should be able to show an error when try to save without Password</span>
+
+
+<span style="color: #888888">  20 passing (968ms)</span>
+
+
+<span style="color: #888888">=============================== Coverage summary ===============================</span>
+<span style="color: #888888">Statements   : 94.59% ( 35/37 )</span>
+<span style="color: #888888">Branches     : 68.75% ( 11/16 )</span>
+<span style="color: #888888">Functions    : 85.71% ( 6/7 )</span>
+<span style="color: #888888">Lines        : 94.59% ( 35/37 )</span>
+<span style="color: #888888">================================================================================</span>
+<span style="color: #888888">[14:33:27] Finished &#39;back_test_cover&#39; after 3.53 s</span>
+<span style="color: #888888">[14:33:27] Starting &#39;test_cover&#39;...</span>
+<span style="color: #888888">[14:33:27] Finished &#39;test_cover&#39; after 7.26 μs</span>
+</pre></td></tr></table></div>
+
 </div>
 <div>
 <h1>Configuration</h1>
