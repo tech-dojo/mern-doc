@@ -69,6 +69,18 @@ html {
   /* border-bottom-right-radius: 0; */
   /* border-bottom-left-radius: 0; */
 }
+
+.example-title-yoman{
+  color: #fff;
+  padding: 0 16px;
+  font-size: 18px;
+  border-color: #1976D2;
+  background: #205081;
+  width: 61.2%;
+  position: relative;
+
+
+}
 .shellCommands {
   white-space: pre-line;
   font-family: Consolas, monaco, monospace;
