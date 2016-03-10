@@ -121,6 +121,9 @@
                 <ul>
                   <a href="#clientSidetestCode">Client Side</a>
                 </ul>
+                <ul>
+                  <a href="#testCoverage">Coverage</a>
+                </ul>
             </ul>
             </li>
             <li>
@@ -2156,12 +2159,11 @@ exports.signout <span style="color: #333333">=</span> <span style="color: #00880
 <div>
 <h1>Test Code</h1>
 <hr>
-
-<h2>Server Side</h2>
-<p><span class="l-sub-section">Run tests with </span></p>
+<p><span class="l-sub-section">Run <strong>all</strong> tests with </span></p>
 <ul class="shellCommands">
 <li id="folderStructure">$ gulp test</li>
 </ul>
+<h2>Server Side</h2>
 <p>
   Mocha is used to test the server side logic. Mocha tests are asynchronous, easy to maintain, and uses a readable Behavior-driven development(BDD) syntax.
 </p>
@@ -2280,17 +2282,13 @@ describe(<span>&#39;Method Save&#39;</span>, <span style="color: #008800; font-w
 </p>
 </br>
 <h2  id="clientSidetestCode">Client Side</h2>
-<p><span class="l-sub-section">Run tests with </span></p>
-<ul class="shellCommands">
-<li id="folderStructure">$ npm test</li>
-</ul>
 <p><b>ReactTestUtils</b> makes it easy to test React components in the testing framework and in this project, <b>Mocha</b> is used as testing framework.</p>
-</br>
+
 <h4>Assertions</h4>
 <p>Mocha needs external assertion library to predicate the result of each test, in this case <span class="codeInsidePgrph">expect.js</span> and <span class="codeInsidePgrph">expect-jsx</span> is being used.</p>
 <h4>Test Files</h4>
 <p class="l-sub-section">
-The test file located inside the <b>tests/componentTest</b> folder. The tests folder contains front end tests in <span class="codeInsidePgrph">article.test.jsx</span> (unit test).
+The test file located inside the <b>tests/componentTest</b> folder contains front end tests, for example in <span class="codeInsidePgrph">article.test.jsx</span> (unit test).
 </p>
 <div class="example-title">article.test.jsx</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
@@ -2337,11 +2335,11 @@ describe(<span style="background-color: #fff0f0">&#39;ListArticlesChild&#39;</sp
     <span style="color: #008800; font-weight: bold">const</span> expected <span style="color: #333333">=</span> <span style="color: #333333">&lt;</span>Panel header<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Article Title1&#39;</span><span style="color: #333333">&gt;</span>
        Article Content1
 
-    <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Panel&gt;;</span>
+    <span style="color: #333333">&lt;</span><span>/Panel&gt;;</span>
     <span style="color: #008800; font-weight: bold">const</span> expected2 <span style="color: #333333">=</span> <span style="color: #333333">&lt;</span>Panel header<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Article Title2&#39;</span><span style="color: #333333">&gt;</span>
        Article Content2
 
-    <span style="color: #333333">&lt;</span><span style="color: #FF0000; background-color: #FFAAAA">/Panel&gt;;</span>
+    <span style="color: #333333">&lt;</span><span>/Panel&gt;;</span>
     expect(actual).toIncludeJSX(expected);
     expect(actual).toIncludeJSX(expected2);
   });
@@ -2367,18 +2365,15 @@ describe(<span style="background-color: #fff0f0">&#39;ListArticlesChild&#39;</sp
 4. Finally the "expect(...)" and “toIncludeJSX(...)” compare the value with each other to get the final result of the specific component.
 </p>
 
-<h2 id="clientSidetestCode">Code Coverage</h2>
-<p><span class="l-sub-section">Run Code Coverage with </span></p>
+<h2 id="testCoverage">Code Coverage</h2>
+<p><span class="l-sub-section">Running the following command, will also show code coverage reports in the console for both front and backend tests: </span></p>
 <ul class="shellCommands">
-<li id="folderStructure">$ gulp test_cover</li>
+<li id="folderStructure">$ gulp test</li>
 </ul>
-<p>
- To review which parts of the framework are tested well and which are not <b>Code Coverage</b> is used. Execute <span class="codeInsidePgrph">$ gulp test_cover</span> to collect coverage report,
- It shows the statistics of all statements, branches, functions and lines triggered by these tests.
-</p>
 <p class="l-sub-section">
-<b>Istanbul</b> is used to generate code coverage. The coverage summary for <b>MERN</b>,
+<b>Istanbul</b> is used for code coverage.
 </p>
+<p>Detailed coverage reports are generated in the <strong>coverage/icov-report</strong> folder (in project root) when gulp test is executed.</p>
 <div class="example-title">Shell Output:</div>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%"> 1
  2
